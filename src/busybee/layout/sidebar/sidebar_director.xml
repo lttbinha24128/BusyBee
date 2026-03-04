@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="busybee.layout.sidebar.SidebarDirectorController"
+      spacing="8" styleClass="sidebar" style="-fx-padding:10;"
+      xmlns:fx="http://javafx.com/fxml">
+
+    <!-- Dashboard -->
+    <Button text="Dashboard" onAction="#showDashboard" styleClass="sidebar-button"/>
+
+    <!-- System Management -->
+    <TitledPane text="System Management" expanded="false">
+        <VBox spacing="6" style="-fx-padding:5;">
+            <Button text="Users" onAction="#showUsersRoles" styleClass="sidebar-subbutton"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Human Resources -->
+    <TitledPane text="Human Resources" expanded="false">
+        <VBox spacing="6" style="-fx-padding:5;">
+            <Button text="Office Staff" onAction="#showOfficeStaff" styleClass="sidebar-subbutton"/>
+            <Button text="Staff Schedule" onAction="#showStaffSchedule" styleClass="sidebar-subbutton"/>
+            <Button text="Recruitment" onAction="#showRecruitment" styleClass="sidebar-subbutton"/>
+            <Button text="Benefits" onAction="#showBenefits" styleClass="sidebar-subbutton"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Helper Management -->
+    <TitledPane text="Helper Management" expanded="false">
+        <VBox spacing="6" style="-fx-padding:5;">
+            <Button text="Helper Profile" onAction="#showHelperProfile" styleClass="sidebar-subbutton"/>
+            <Button text="Helper Schedule" onAction="#showHelperSchedule" styleClass="sidebar-subbutton"/>
+            <Button text="Assignment" onAction="#showAssignment" styleClass="sidebar-subbutton"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Service & Customer -->
+    <TitledPane text="Customer" expanded="false">
+        <VBox spacing="6" style="-fx-padding:5;">
+            <Button text="Service Mgmt" onAction="#showServiceMgmt" styleClass="sidebar-subbutton"/>
+            <Button text="Customer Mgmt" onAction="#showCustomer" styleClass="sidebar-subbutton"/>
+            <Button text="Service Requests" onAction="#showRequest" styleClass="sidebar-subbutton"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Inventory -->
+    <Button text="Inventory" onAction="#showInventory" styleClass="sidebar-button"/>
+
+    <!-- Finance & Reports -->
+    <TitledPane text="Reports" expanded="false">
+        <VBox spacing="6" style="-fx-padding:5;">
+            <Button text="Billing" onAction="#showBilling" styleClass="sidebar-subbutton"/>
+            <Button text="Salary" onAction="#showSalary" styleClass="sidebar-subbutton"/>
+            <Button text="Reports and Feedback" onAction="#showReports" styleClass="sidebar-subbutton"/>
+        </VBox>
+    </TitledPane>
+    
+     <!-- Promotion -->
+    <TitledPane text="Promotion" expanded="false"> 
+        <VBox spacing="6" style="-fx-padding:5;"> 
+            <Button text="Promotion List" onAction="#showPromotionList" styleClass="sidebar-subbutton"/> 
+            <Button text="Create Promotion" onAction="#showCreatePromotion" styleClass="sidebar-subbutton"/> 
+            <Button text="Active Promotions" onAction="#showActivePromotions" styleClass="sidebar-subbutton"/> 
+            <Button text="Expired Promotions" onAction="#showExpiredPromotions" styleClass="sidebar-subbutton"/> 
+        </VBox> 
+    </TitledPane>
+
+</VBox>

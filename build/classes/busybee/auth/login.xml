@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="busybee.auth.LoginController"
+           styleClass="bg-main">
+
+    <!-- Khung login nằm giữa -->
+    <VBox spacing="12"
+          alignment="CENTER"
+          styleClass="login-container"
+          prefWidth="360"
+          prefHeight="280">
+
+        <!-- Title -->
+        <Label text="BusyBee Login"
+               styleClass="login-title"/>
+
+        <!-- Username -->
+        <TextField fx:id="txtUsername"
+                   promptText="Username"
+                   styleClass="text-field"/>
+
+        <!-- Password -->
+        <PasswordField fx:id="txtPassword"
+                       promptText="Password"
+                       styleClass="password-field"/>
+
+        <!-- Error message -->
+        <Label fx:id="lblError"
+               text=""
+               styleClass="login-error"/>
+
+        <!-- Login button -->
+        <Button text="Login"
+                onAction="#handleLogin"
+                styleClass="btn-login"/>
+    </VBox>
+</StackPane>
