@@ -6,14 +6,15 @@
 <StackPane xmlns="http://javafx.com/javafx/21"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="busybee.auth.LoginController"
-           styleClass="bg-main">
+           styleClass="bg-main"
+           stylesheets="@../style/login.css">
 
     <!-- Khung login nằm giữa -->
     <VBox spacing="12"
           alignment="CENTER"
           styleClass="login-container"
           prefWidth="360"
-          prefHeight="280">
+          prefHeight="300">
 
         <!-- Title -->
         <Label text="BusyBee Login"
@@ -24,10 +25,28 @@
                    promptText="Username"
                    styleClass="text-field"/>
 
-        <!-- Password -->
-        <PasswordField fx:id="txtPassword"
+        <!-- Password với toggle -->
+        <HBox spacing="0" styleClass="password-container">
+            <!-- PasswordField mặc định hiển thị -->
+            <PasswordField fx:id="txtPassword"
+                           promptText="Password"
+                           styleClass="password-field"
+                           HBox.hgrow="ALWAYS"/>
+
+            <!-- TextField để hiện mật khẩu, ẩn ban đầu -->
+            <TextField fx:id="txtPasswordVisible"
                        promptText="Password"
-                       styleClass="password-field"/>
+                       styleClass="password-field"
+                       HBox.hgrow="ALWAYS"
+                       visible="false"
+                       managed="false"/>
+
+            <!-- Nút toggle -->
+            <Button fx:id="btnTogglePassword"
+                    text="👁"
+                    onAction="#handleTogglePassword"
+                    styleClass="btn-toggle-password"/>
+        </HBox>
 
         <!-- Error message -->
         <Label fx:id="lblError"

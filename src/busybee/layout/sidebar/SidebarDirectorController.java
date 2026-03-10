@@ -2,82 +2,102 @@ package busybee.layout.sidebar;
 
 import busybee.layout.MainLayoutController;
 import javafx.fxml.FXML;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 
 public class SidebarDirectorController {
 
-    // Dashboard
-    @FXML private void showDashboard() {
-        MainLayoutController.getInstance().showContent("Dashboard VIEW HERE");
-    }
+    @FXML
+    private TreeView<String> sidebarTree;
 
-    // System Management
-    @FXML private void showUsersRoles() {
-        MainLayoutController.getInstance().showContent("USERS & ROLES VIEW HERE");
-    }
+    @FXML
+    private void initialize() {
+        // Root invisible
+        TreeItem<String> root = new TreeItem<>("Root");
+        root.setExpanded(true);
+        sidebarTree.setRoot(root);
+        sidebarTree.setShowRoot(false);
 
-    // Human Resources
-    @FXML private void showOfficeStaff() {
-        MainLayoutController.getInstance().showContent("OFFICE STAFF VIEW HERE");
-    }
-    @FXML private void showStaffSchedule() {
-        MainLayoutController.getInstance().showContent("STAFF SCHEDULE VIEW HERE");
-    }
-    @FXML private void showRecruitment() {
-        MainLayoutController.getInstance().showContent("RECRUITMENT VIEW HERE");
-    }
-    @FXML private void showBenefits() {
-        MainLayoutController.getInstance().showContent("BENEFITS VIEW HERE");
-    }
+        // Dashboard
+        TreeItem<String> dashboard = new TreeItem<>("🏠 Dashboard");
+        root.getChildren().add(dashboard);
 
-    // Helper Management
-    @FXML private void showHelperProfile() {
-        MainLayoutController.getInstance().showContent("HELPER PROFILE VIEW HERE");
-    }
-    @FXML private void showHelperSchedule() {
-        MainLayoutController.getInstance().showContent("HELPER SCHEDULE VIEW HERE");
-    }
-    @FXML private void showAssignment() {
-        MainLayoutController.getInstance().showContent("ASSIGNMENT VIEW HERE");
-    }
+        // System Management
+        TreeItem<String> sysMgmt = new TreeItem<>("⚙️ System Management");
+        sysMgmt.getChildren().add(new TreeItem<>("Users & Roles"));
+        root.getChildren().add(sysMgmt);
 
-    // Service & Customer
-    @FXML private void showServiceMgmt() {
-        MainLayoutController.getInstance().showContent("SERVICE MANAGEMENT VIEW HERE");
-    }
-    @FXML private void showCustomer() {
-        MainLayoutController.getInstance().showContent("CUSTOMER MANAGEMENT VIEW HERE");
-    }
-    @FXML private void showRequest() {
-        MainLayoutController.getInstance().showContent("SERVICE REQUESTS VIEW HERE");
-    }
+        // Human Resources
+        TreeItem<String> hr = new TreeItem<>("👥 Human Resources");
+        hr.getChildren().add(new TreeItem<>("Office Staff"));
+        hr.getChildren().add(new TreeItem<>("Staff Schedule"));
+        hr.getChildren().add(new TreeItem<>("Recruitment"));
+        hr.getChildren().add(new TreeItem<>("Benefits"));
+        root.getChildren().add(hr);
 
-    // Inventory
-    @FXML private void showInventory() {
-        MainLayoutController.getInstance().showContent("INVENTORY VIEW HERE");
-    }
+        // Helper Management
+        TreeItem<String> helper = new TreeItem<>("🧹 Helper Management");
+        helper.getChildren().add(new TreeItem<>("Profile"));
+        helper.getChildren().add(new TreeItem<>("Schedule"));
+        helper.getChildren().add(new TreeItem<>("Assignment"));
+        root.getChildren().add(helper);
 
-    // Finance & Reports
-    @FXML private void showBilling() {
-        MainLayoutController.getInstance().showContent("BILLING VIEW HERE");
-    }
-    @FXML private void showSalary() {
-        MainLayoutController.getInstance().showContent("SALARY VIEW HERE");
-    }
-    @FXML private void showReports() {
-        MainLayoutController.getInstance().showContent("REPORTS & FEEDBACK VIEW HERE");
-    }
+        // Inventory
+        TreeItem<String> inventory = new TreeItem<>("📦 Inventory");
+        root.getChildren().add(inventory);
 
-    // Promotion submenu
-    @FXML private void showPromotionList() {
-        MainLayoutController.getInstance().showContent("PROMOTION LIST VIEW HERE");
-    }
-    @FXML private void showCreatePromotion() {
-        MainLayoutController.getInstance().showContent("CREATE PROMOTION VIEW HERE");
-    }
-    @FXML private void showActivePromotions() {
-        MainLayoutController.getInstance().showContent("ACTIVE PROMOTIONS VIEW HERE");
-    }
-    @FXML private void showExpiredPromotions() {
-        MainLayoutController.getInstance().showContent("EXPIRED PROMOTIONS VIEW HERE");
+        // Reports
+        TreeItem<String> reports = new TreeItem<>("💰 Reports");
+        reports.getChildren().add(new TreeItem<>("Billing"));
+        reports.getChildren().add(new TreeItem<>("Salary"));
+        reports.getChildren().add(new TreeItem<>("Feedback"));
+        root.getChildren().add(reports);
+
+        // Promotion
+        TreeItem<String> promotion = new TreeItem<>("🎉 Promotion");
+        promotion.getChildren().add(new TreeItem<>("List"));
+        promotion.getChildren().add(new TreeItem<>("Create"));
+        promotion.getChildren().add(new TreeItem<>("Active"));
+        promotion.getChildren().add(new TreeItem<>("Expired"));
+        root.getChildren().add(promotion);
+
+        // Listener cho chọn item
+        sidebarTree.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal == null) return;
+            String value = newVal.getValue();
+
+            // reset style cho oldVal
+            if (oldVal != null && oldVal.getGraphic() != null) {
+                oldVal.getGraphic().getStyleClass().remove("active-item");
+            }
+
+            // gắn style cho newVal
+            if (newVal.getGraphic() != null) {
+                if (!newVal.getGraphic().getStyleClass().contains("active-item")) {
+                    newVal.getGraphic().getStyleClass().add("active-item");
+                }
+            }
+
+            // show content
+            switch (value) {
+                case "🏠 Dashboard" -> MainLayoutController.getInstance().showContent("Dashboard VIEW HERE");
+                case "Users & Roles" -> MainLayoutController.getInstance().showContent("USERS & ROLES VIEW HERE");
+                case "Office Staff" -> MainLayoutController.getInstance().showContent("OFFICE STAFF VIEW HERE");
+                case "Staff Schedule" -> MainLayoutController.getInstance().showContent("STAFF SCHEDULE VIEW HERE");
+                case "Recruitment" -> MainLayoutController.getInstance().showContent("RECRUITMENT VIEW HERE");
+                case "Benefits" -> MainLayoutController.getInstance().showContent("BENEFITS VIEW HERE");
+                case "Profile" -> MainLayoutController.getInstance().showContent("HELPER PROFILE VIEW HERE");
+                case "Schedule" -> MainLayoutController.getInstance().showContent("HELPER SCHEDULE VIEW HERE");
+                case "Assignment" -> MainLayoutController.getInstance().showContent("ASSIGNMENT VIEW HERE");
+                case "📦 Inventory" -> MainLayoutController.getInstance().showContent("INVENTORY VIEW HERE");
+                case "Billing" -> MainLayoutController.getInstance().showContent("BILLING VIEW HERE");
+                case "Salary" -> MainLayoutController.getInstance().showContent("SALARY VIEW HERE");
+                case "Feedback" -> MainLayoutController.getInstance().showContent("REPORTS & FEEDBACK VIEW HERE");
+                case "List" -> MainLayoutController.getInstance().showContent("PROMOTION LIST VIEW HERE");
+                case "Create" -> MainLayoutController.getInstance().showContent("CREATE PROMOTION VIEW HERE");
+                case "Active" -> MainLayoutController.getInstance().showContent("ACTIVE PROMOTIONS VIEW HERE");
+                case "Expired" -> MainLayoutController.getInstance().showContent("EXPIRED PROMOTIONS VIEW HERE");
+            }
+        });
     }
 }

@@ -41,7 +41,7 @@
 
     <!-- SIDEBAR CONTAINER -->
     <left>
-        <VBox fx:id="sidebarContainer"/>
+       <VBox fx:id="sidebarContainer" VBox.vgrow="ALWAYS"/>
     </left>
 
     <!-- MAIN CONTENT -->

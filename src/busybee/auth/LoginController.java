@@ -1,23 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package busybee.auth;
 
-/**
- *
- * @author 
- */
 import busybee.app.MainApp;
 import busybee.model.UserAccount;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 
 public class LoginController {
 
-    
     @FXML
     private TextField txtUsername;
 
@@ -25,31 +17,67 @@ public class LoginController {
     private PasswordField txtPassword;
 
     @FXML
+    private TextField txtPasswordVisible;
+
+    @FXML
+    private Button btnTogglePassword;
+
+    @FXML
     private Label lblError;
 
-    // Service xử lý đăng nhập 
+    // Service xử lý đăng nhập
     private AuthService authService = new AuthService();
 
-    //Hàm được gọi khi người dùng bấm nút Login
-     
-@FXML
-public void handleLogin() {
+    private boolean isPasswordVisible = false;
 
-    String username = txtUsername.getText();
-    String password = txtPassword.getText();
+    @FXML
+    private void initialize() {
+        // Đồng bộ text giữa PasswordField và TextField
+        txtPasswordVisible.textProperty().bindBidirectional(txtPassword.textProperty());
 
-    UserAccount user = authService.login(username, password);
-
-    if (user == null) {
-        lblError.setText("Incorrect username or password");
-        return;
+        // Ẩn TextField ban đầu
+        txtPasswordVisible.setVisible(false);
+        txtPasswordVisible.setManaged(false);
     }
 
-    // Lưu session
-    Session.setCurrentUser(user);
+    // Hàm toggle hiện/ẩn mật khẩu
+    @FXML
+    private void handleTogglePassword() {
+        isPasswordVisible = !isPasswordVisible;
 
-    // CHUYỂN SANG MAIN LAYOUT
-    MainApp.changeScene("/busybee/layout/main_layout.xml");
-    MainApp.getPrimaryStage().setMaximized(true);
-}
+        if (isPasswordVisible) {
+            txtPasswordVisible.setVisible(true);
+            txtPasswordVisible.setManaged(true);
+            txtPassword.setVisible(false);
+            txtPassword.setManaged(false);
+            btnTogglePassword.setText("🙈");
+        } else {
+            txtPassword.setVisible(true);
+            txtPassword.setManaged(true);
+            txtPasswordVisible.setVisible(false);
+            txtPasswordVisible.setManaged(false);
+            btnTogglePassword.setText("👁");
+        }
+    }
+
+    // Hàm được gọi khi người dùng bấm nút Login
+    @FXML
+    public void handleLogin() {
+        String username = txtUsername.getText();
+        String password = isPasswordVisible ? txtPasswordVisible.getText() : txtPassword.getText();
+
+        UserAccount user = authService.login(username, password);
+
+        if (user == null) {
+            lblError.setText("Incorrect username or password");
+            return;
+        }
+
+        // Lưu session
+        Session.setCurrentUser(user);
+
+        // Chuyển sang main layout
+        MainApp.changeScene("/busybee/layout/main_layout.xml");
+        MainApp.getPrimaryStage().setMaximized(true);
+    }
 }
