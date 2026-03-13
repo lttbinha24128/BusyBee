@@ -9,5 +9,9 @@
       spacing="8"
       VBox.vgrow="ALWAYS">
 
-    <TreeView fx:id="sidebarTree" prefWidth="220" VBox.vgrow="ALWAYS"/>
+    <TreeView fx:id="sidebarTree"
+          styleClass="sidebar-tree"
+         
+          VBox.vgrow="ALWAYS"/>
+
 </VBox>

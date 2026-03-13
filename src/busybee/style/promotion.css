@@ -1,0 +1,469 @@
+/* =====================================
+BUSYBEE PROMOTION MODULE
+Clean Admin Dashboard Style
+===================================== */
+
+/* =========================
+PAGE TITLE
+========================= */
+
+.promotion-title {
+
+
+-fx-font-size: 24px;
+-fx-font-weight: bold;
+-fx-text-fill: #2c3e50;
+
+
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title {
+
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+-fx-text-fill: #2c3e50;
+
+
+}
+
+/* =========================
+TOOLBAR
+========================= */
+
+.promotion-toolbar {
+
+
+-fx-padding: 15 0 15 0;
+-fx-spacing: 10;
+
+
+}
+
+/* =========================
+SEARCH FIELD
+========================= */
+
+.promotion-toolbar .text-field {
+
+
+-fx-background-color: white;
+-fx-background-radius: 8;
+-fx-border-radius: 8;
+-fx-border-color: #e0e0e0;
+-fx-padding: 7 12;
+
+}
+
+.promotion-toolbar .text-field:focused {
+
+
+-fx-border-color: #ffb300;
+-fx-effect: dropshadow(gaussian, rgba(255,179,0,0.25), 6,0,0,0);
+
+
+}
+
+/* =========================
+COMBOBOX FILTER
+========================= */
+
+.promotion-toolbar .combo-box {
+
+
+-fx-background-color: white;
+-fx-background-radius: 8;
+-fx-border-radius: 8;
+-fx-border-color: #e0e0e0;
+
+
+}
+
+.promotion-toolbar .combo-box:focused {
+
+-fx-border-color: #ffb300;
+
+
+}
+
+/* =========================
+CREATE BUTTON
+========================= */
+
+.btn-create {
+
+
+-fx-background-color: linear-gradient(#ffd54f,#ffb300);
+-fx-text-fill: black;
+-fx-font-weight: bold;
+-fx-background-radius: 8;
+-fx-padding: 8 18;
+
+
+}
+
+.btn-create:hover {
+
+
+-fx-background-color: linear-gradient(#ffca28,#ffa000);
+
+
+}
+
+.btn-create:pressed {
+
+
+-fx-background-color: #ff8f00;
+
+
+}
+
+/* =========================
+TABLE
+========================= */
+
+.promotion-table {
+
+
+-fx-background-color: white;
+-fx-border-color: #e6e6e6;
+-fx-border-radius: 10;
+-fx-background-radius: 10;
+
+
+}
+
+/* Table header */
+
+.promotion-table .column-header-background {
+
+
+-fx-background-color: #f4f6f8;
+-fx-background-radius: 10 10 0 0;
+
+
+}
+
+.promotion-table .column-header {
+
+
+-fx-font-weight: bold;
+-fx-font-size: 13px;
+
+}
+
+/* Table rows */
+
+.promotion-table .table-row-cell {
+
+
+-fx-border-color: transparent transparent #f0f0f0 transparent;
+
+
+}
+
+/* Hover */
+
+.promotion-table .table-row-cell:hover {
+
+
+-fx-background-color: #fafafa;
+
+}
+
+/* Selected */
+
+.promotion-table .table-row-cell:selected {
+
+
+-fx-background-color: #fff3cd;
+
+
+}
+
+.promotion-table:focused .table-row-cell:selected {
+
+
+-fx-background-color: #fff3cd;
+
+}
+
+/* =========================
+STATUS BADGES
+========================= */
+
+.status-active {
+
+
+-fx-background-color: #d4edda;
+-fx-text-fill: #155724;
+-fx-padding: 4 12;
+-fx-background-radius: 20;
+-fx-font-weight: bold;
+
+
+}
+
+.status-expired {
+
+
+-fx-background-color: #f8d7da;
+-fx-text-fill: #721c24;
+-fx-padding: 4 12;
+-fx-background-radius: 20;
+-fx-font-weight: bold;
+
+
+}
+
+.status-inactive {
+
+-fx-background-color: #e2e3e5;
+-fx-text-fill: #383d41;
+-fx-padding: 4 12;
+-fx-background-radius: 20;
+-fx-font-weight: bold;
+
+}
+
+/* =========================
+ACTION BUTTONS
+========================= */
+
+.btn-edit {
+
+
+-fx-background-color: #4CAF50;
+-fx-text-fill: white;
+-fx-background-radius: 6;
+-fx-padding: 4 12;
+
+
+}
+
+.btn-edit:hover {
+
+
+-fx-background-color: #43a047;
+
+
+}
+
+.btn-disable {
+
+
+-fx-background-color: #f44336;
+-fx-text-fill: white;
+-fx-background-radius: 6;
+-fx-padding: 4 12;
+
+
+}
+
+.btn-disable:hover {
+
+
+-fx-background-color: #d32f2f;
+
+
+}
+
+/* =====================================
+PROMOTION REPORT DASHBOARD
+===================================== */
+
+/* =========================
+SUMMARY CARDS
+========================= */
+
+.report-card {
+
+
+-fx-background-color: white;
+-fx-padding: 18;
+-fx-spacing: 6;
+-fx-background-radius: 12;
+-fx-border-radius: 12;
+-fx-border-color: #e6e6e6;
+-fx-cursor: hand;
+
+
+}
+
+.report-card:hover {
+
+
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10,0,0,2);
+
+
+}
+
+/* Number in card */
+
+.report-number {
+
+
+-fx-font-size: 24px;
+-fx-font-weight: bold;
+-fx-text-fill: #ffb300;
+
+
+}
+
+/* =========================
+CHART CONTAINER
+========================= */
+
+.promotion-chart {
+
+
+-fx-background-color: white;
+-fx-padding: 18;
+-fx-background-radius: 12;
+-fx-border-radius: 12;
+-fx-border-color: #e6e6e6;
+
+
+}
+
+/* =========================
+   BAR CHART COLOR
+   ========================= */
+
+.chart-bar {
+
+    -fx-bar-fill: linear-gradient(#FFD54F, #FFB300);
+
+}
+
+/* nếu có nhiều series */
+
+.default-color0.chart-bar {
+
+    -fx-bar-fill: linear-gradient(#FFD54F, #FFB300);
+
+}
+
+.default-color1.chart-bar {
+
+    -fx-bar-fill: #FFC107;
+
+}
+
+.default-color2.chart-bar {
+
+    -fx-bar-fill: #FFCA28;
+
+}
+
+/* Bar style */
+
+.chart-bar {
+
+
+-fx-background-radius: 6 6 0 0;
+
+
+}
+
+/* Grid lines */
+
+.chart-vertical-grid-lines {
+
+
+-fx-stroke: #eeeeee;
+
+
+}
+
+.chart-horizontal-grid-lines {
+
+
+-fx-stroke: #eeeeee;
+
+
+}
+
+/* Axis */
+
+.axis {
+
+
+-fx-tick-label-fill: #6c757d;
+
+
+}
+
+.axis-label {
+
+
+-fx-text-fill: #6c757d;
+
+
+}
+
+/* Legend */
+
+.chart-legend {
+
+
+-fx-background-color: transparent;
+
+
+}
+
+.chart-legend-item {
+
+
+-fx-text-fill: #6c757d;
+
+
+}
+
+/* =========================
+REPORT TABLE
+========================= */
+
+.report-table {
+
+
+-fx-background-color: white;
+-fx-border-color: #e6e6e6;
+-fx-background-radius: 10;
+-fx-border-radius: 10;
+
+
+}
+
+.report-table .column-header-background {
+
+
+-fx-background-color: #f4f6f8;
+
+
+}
+
+.report-table .table-row-cell:hover {
+
+
+-fx-background-color: #fafafa;
+
+
+}
+
+.report-table .table-row-cell:selected {
+
+
+-fx-background-color: #fff3cd;
+}
+
+.report-table:focused .table-row-cell:selected {
+
+
+-fx-background-color: #fff3cd;
+
+
+}

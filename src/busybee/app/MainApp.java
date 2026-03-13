@@ -14,46 +14,63 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
 
-        // Mở màn hình login khi khởi động, kèm login.css
+        // mở login
         changeScene("/busybee/auth/login.xml", "login.css");
 
         stage.setTitle("BusyBee Management System");
         stage.show();
     }
 
-    /**
-     * Đổi scene và load CSS
-     * @param xmlPath đường dẫn FXML
-     * @param cssFiles danh sách file CSS cần load thêm (ngoài busybee.css)
-     */
-    public static void changeScene(String xmlPath, String... cssFiles) {
+    //Đổi scene và load CSS
+     
+    public static void changeScene(String fxmlPath, String... cssFiles) {
+
         try {
-            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource(xmlPath));
+
+            FXMLLoader loader = new FXMLLoader(
+                    MainApp.class.getResource(fxmlPath)
+            );
+
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
 
-            // Luôn load CSS chung
+            /* ===== CSS GLOBAL ===== */
+
             scene.getStylesheets().add(
-                MainApp.class.getResource("/busybee/style/busybee.css").toExternalForm()
+                    MainApp.class
+                            .getResource("/busybee/style/busybee.css")
+                            .toExternalForm()
             );
 
-            // Load thêm các CSS khác nếu có
-            for (String cssFile : cssFiles) {
-                scene.getStylesheets().add(
-                    MainApp.class.getResource("/busybee/style/" + cssFile).toExternalForm()
-                );
+            /* ===== CSS SCENE ===== */
+
+            if (cssFiles != null) {
+
+                for (String css : cssFiles) {
+
+                    scene.getStylesheets().add(
+                            MainApp.class
+                                    .getResource("/busybee/style/" + css)
+                                    .toExternalForm()
+                    );
+
+                }
+
             }
 
             primaryStage.setScene(scene);
 
-            // Căn giữa lại mỗi lần đổi scene
+            // căn giữa lại
             primaryStage.centerOnScreen();
 
         } catch (Exception e) {
-            System.err.println("Error loading scene: " + xmlPath);
+
+            System.err.println("Error loading scene: " + fxmlPath);
             e.printStackTrace();
+
         }
+
     }
 
     public static Stage getPrimaryStage() {
@@ -63,4 +80,5 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

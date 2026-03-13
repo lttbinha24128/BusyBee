@@ -1,23 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?import javafx.scene.control.*?> 
-<?import javafx.scene.layout.*?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.VBox?>
+
 <VBox fx:controller="busybee.layout.sidebar.SidebarReceptionController"
-      xmlns:fx="http://javafx.com/fxml"
-      spacing="8" styleClass="sidebar" style="-fx-padding:10;">
+       xmlns:fx="http://javafx.com/fxml"
+      styleClass="sidebar"
+      spacing="8"
+      VBox.vgrow="ALWAYS">
 
-    <!-- Dashboard -->
-    <Button text="Dashboard" onAction="#showDashboard" styleClass="sidebar-button"/>
-
-    <!-- Customers -->
-    <Button text="Customers" onAction="#showCustomer" styleClass="sidebar-button"/>
-
-    <!-- Service Requests -->
-    <Button text="Service Requests" onAction="#showRequest" styleClass="sidebar-button"/>
-
-    <!-- Ongoing Status -->
-    <Button text="Ongoing Status" onAction="#showStatus" styleClass="sidebar-button"/>
-
-    <!-- Billing / Payment -->
-    <Button text="Billing / Payment" onAction="#showBilling" styleClass="sidebar-button"/>
-
+    <TreeView fx:id="sidebarTree" prefWidth="220" VBox.vgrow="ALWAYS"/>
 </VBox>

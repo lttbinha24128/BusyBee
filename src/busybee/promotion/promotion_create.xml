@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.promotion.PromotionCreateController"
+      style="-fx-padding:20;">
+
+    <!-- TITLE -->
+    <Label text="➕ Create Promotion"
+           style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+    <GridPane hgap="15" vgap="15">
+
+        <Label text="Promotion Name" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Service" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbService" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Discount Type" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbDiscountType" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Discount Value" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDiscountValue" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Max Discount Amount" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMaxDiscount" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Min Order Amount" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMinOrder" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Usage Limit" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtUsageLimit" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Max Usage Per Customer" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMaxUsagePerCustomer" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Start Date" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpStartDate" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+        <Label text="End Date" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpEndDate" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+        <Label text="Status" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbStatus" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <HBox spacing="10">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+
+    <Label text="Discount Preview:"
+           style="-fx-font-weight:bold;"/>
+
+    <Label fx:id="lblPreview"
+           text="0"
+           style="-fx-text-fill:green; -fx-font-weight:bold;"/>
+
+</HBox>
+
+        <Button fx:id="btnSave"
+                text="💾 Save Promotion"/>
+
+        <Button fx:id="btnCancel"
+                text="Cancel"/>
+
+    </HBox>
+
+</VBox>

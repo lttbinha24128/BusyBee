@@ -4,6 +4,7 @@ import busybee.layout.MainLayoutController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.MouseEvent;
 
 public class SidebarDirectorController {
 
@@ -12,6 +13,7 @@ public class SidebarDirectorController {
 
     @FXML
     private void initialize() {
+
         // Root invisible
         TreeItem<String> root = new TreeItem<>("Root");
         root.setExpanded(true);
@@ -23,7 +25,7 @@ public class SidebarDirectorController {
         root.getChildren().add(dashboard);
 
         // System Management
-        TreeItem<String> sysMgmt = new TreeItem<>("⚙️ System Management");
+        TreeItem<String> sysMgmt = new TreeItem<>("⚙ System Management");
         sysMgmt.getChildren().add(new TreeItem<>("Users & Roles"));
         root.getChildren().add(sysMgmt);
 
@@ -36,7 +38,7 @@ public class SidebarDirectorController {
         root.getChildren().add(hr);
 
         // Helper Management
-        TreeItem<String> helper = new TreeItem<>("🧹 Helper Management");
+        TreeItem<String> helper = new TreeItem<>("🤝 Collaborator Management");
         helper.getChildren().add(new TreeItem<>("Profile"));
         helper.getChildren().add(new TreeItem<>("Schedule"));
         helper.getChildren().add(new TreeItem<>("Assignment"));
@@ -53,51 +55,85 @@ public class SidebarDirectorController {
         reports.getChildren().add(new TreeItem<>("Feedback"));
         root.getChildren().add(reports);
 
-        // Promotion
+        // Promotion (CHỈ SỬA PHẦN NÀY)
         TreeItem<String> promotion = new TreeItem<>("🎉 Promotion");
-        promotion.getChildren().add(new TreeItem<>("List"));
-        promotion.getChildren().add(new TreeItem<>("Create"));
-        promotion.getChildren().add(new TreeItem<>("Active"));
-        promotion.getChildren().add(new TreeItem<>("Expired"));
+        promotion.getChildren().add(new TreeItem<>("All Promotions"));
+        promotion.getChildren().add(new TreeItem<>("Promotion Reports"));
         root.getChildren().add(promotion);
 
-        // Listener cho chọn item
+        // CLICK 1 LẦN ĐỂ DROPDOWN
+        sidebarTree.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+
+            TreeItem<String> selected = sidebarTree.getSelectionModel().getSelectedItem();
+
+            if (selected != null && !selected.isLeaf()) {
+                selected.setExpanded(!selected.isExpanded());
+            }
+
+        });
+
+        //XỬ LÝ NAVIGATION
         sidebarTree.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal == null) return;
+
+            if (newVal == null) {
+                return;
+            }
+
             String value = newVal.getValue();
 
-            // reset style cho oldVal
-            if (oldVal != null && oldVal.getGraphic() != null) {
-                oldVal.getGraphic().getStyleClass().remove("active-item");
-            }
-
-            // gắn style cho newVal
-            if (newVal.getGraphic() != null) {
-                if (!newVal.getGraphic().getStyleClass().contains("active-item")) {
-                    newVal.getGraphic().getStyleClass().add("active-item");
-                }
-            }
-
-            // show content
             switch (value) {
-                case "🏠 Dashboard" -> MainLayoutController.getInstance().showContent("Dashboard VIEW HERE");
-                case "Users & Roles" -> MainLayoutController.getInstance().showContent("USERS & ROLES VIEW HERE");
-                case "Office Staff" -> MainLayoutController.getInstance().showContent("OFFICE STAFF VIEW HERE");
-                case "Staff Schedule" -> MainLayoutController.getInstance().showContent("STAFF SCHEDULE VIEW HERE");
-                case "Recruitment" -> MainLayoutController.getInstance().showContent("RECRUITMENT VIEW HERE");
-                case "Benefits" -> MainLayoutController.getInstance().showContent("BENEFITS VIEW HERE");
-                case "Profile" -> MainLayoutController.getInstance().showContent("HELPER PROFILE VIEW HERE");
-                case "Schedule" -> MainLayoutController.getInstance().showContent("HELPER SCHEDULE VIEW HERE");
-                case "Assignment" -> MainLayoutController.getInstance().showContent("ASSIGNMENT VIEW HERE");
-                case "📦 Inventory" -> MainLayoutController.getInstance().showContent("INVENTORY VIEW HERE");
-                case "Billing" -> MainLayoutController.getInstance().showContent("BILLING VIEW HERE");
-                case "Salary" -> MainLayoutController.getInstance().showContent("SALARY VIEW HERE");
-                case "Feedback" -> MainLayoutController.getInstance().showContent("REPORTS & FEEDBACK VIEW HERE");
-                case "List" -> MainLayoutController.getInstance().showContent("PROMOTION LIST VIEW HERE");
-                case "Create" -> MainLayoutController.getInstance().showContent("CREATE PROMOTION VIEW HERE");
-                case "Active" -> MainLayoutController.getInstance().showContent("ACTIVE PROMOTIONS VIEW HERE");
-                case "Expired" -> MainLayoutController.getInstance().showContent("EXPIRED PROMOTIONS VIEW HERE");
+
+                case "🏠 Dashboard" ->
+                    MainLayoutController.getInstance().showContent("Dashboard VIEW HERE");
+
+                case "Users & Roles" ->
+                    MainLayoutController.getInstance().showContent("USERS & ROLES VIEW HERE");
+
+                case "Office Staff" ->
+                    MainLayoutController.getInstance().showContent("OFFICE STAFF VIEW HERE");
+
+                case "Staff Schedule" ->
+                    MainLayoutController.getInstance().showContent("STAFF SCHEDULE VIEW HERE");
+
+                case "Recruitment" ->
+                    MainLayoutController.getInstance().showContent("RECRUITMENT VIEW HERE");
+
+                case "Benefits" ->
+                    MainLayoutController.getInstance().showContent("BENEFITS VIEW HERE");
+
+                case "Profile" ->
+                    MainLayoutController.getInstance().showContent("HELPER PROFILE VIEW HERE");
+
+                case "Schedule" ->
+                    MainLayoutController.getInstance().showContent("HELPER SCHEDULE VIEW HERE");
+
+                case "Assignment" ->
+                    MainLayoutController.getInstance().showContent("ASSIGNMENT VIEW HERE");
+
+                case "📦 Inventory" ->
+                    MainLayoutController.getInstance().showContent("INVENTORY VIEW HERE");
+
+                case "Billing" ->
+                    MainLayoutController.getInstance().showContent("BILLING VIEW HERE");
+
+                case "Salary" ->
+                    MainLayoutController.getInstance().showContent("SALARY VIEW HERE");
+
+                case "Feedback" ->
+                    MainLayoutController.getInstance().showContent("REPORTS & FEEDBACK VIEW HERE");
+
+                // PROMOTION NAVIGATION
+                case "All Promotions" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/promotion/promotion_list.xml");
+
+                case "Promotion Reports" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/promotion/promotion_reports.xml");
+
             }
+
         });
+
     }
 }

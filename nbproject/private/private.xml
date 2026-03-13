@@ -3,27 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/PromotionListController.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/main_layout.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/login.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/PromotionRow.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/sidebar_warehouse.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/style/promotion.css</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/promotion_create.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/sidebar_reception.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/model/UserAccount.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/SidebarDirectorController.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/PromotionReportController.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/PromotionCreateController.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/Session.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/LoginController.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/SidebarWarehouseController.java</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/main_layout.xml</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/MainLayoutController.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/AuthService.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/SidebarOfficeController.java</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/login.xml</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/sidebar_warehouse.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/promotion_list.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/PromotionReportRow.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/sidebar_director.xml</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/SidebarReceptionController.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/style/login.css</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/sidebar_reception.xml</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/model/UserAccount.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/Role.java</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/style/directorSidebar.css</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/sidebar_office.xml</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/layout/sidebar/SidebarDirectorController.java</file>
             <file>file:/G:/BusyBee/BusyBeeProject/.gitignore</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/app/MainApp.java</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/promotion/promotion_reports.xml</file>
+            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/style/sidebar.css</file>
             <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/style/busybee.css</file>
-            <file>file:/G:/BusyBee/BusyBeeProject/src/busybee/auth/Session.java</file>
         </group>
     </open-files>
 </project-private>
