@@ -1,0 +1,75 @@
+/* ===== SIDEBAR TREEVIEW ===== */
+
+.sidebar-tree {
+    -fx-background-color: #2C2C2C;
+    -fx-border-color: transparent;
+}
+
+/* bỏ background trắng mặc định của viewport */
+.sidebar-tree .virtual-flow .clipped-container .sheet {
+    -fx-background-color: transparent;
+}
+
+
+/* ===== TREE CELL ===== */
+
+.sidebar-tree .tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 8 16;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+}
+
+
+/* hover menu */
+.sidebar-tree .tree-cell:filled:hover {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #1A1A1A;
+}
+
+
+/* selected menu */
+.sidebar-tree .tree-cell:filled:selected {
+    -fx-background-color: #FFC107;
+    -fx-text-fill: #1A1A1A;
+    -fx-font-weight: 600;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 0 0 0 4;
+}
+
+
+/* selected khi TreeView focus */
+.sidebar-tree:focused .tree-cell:filled:selected {
+    -fx-background-color: #FFC107;
+}
+
+
+/* ===== DROPDOWN ARROW ===== */
+
+/* reset arrow mặc định */
+.sidebar-tree .tree-disclosure-node .arrow {
+    -fx-background-color: transparent;
+}
+
+/* custom arrow */
+.sidebar-tree .tree-disclosure-node {
+    -fx-background-color: #FFD700;
+    -fx-shape: "M0 0 L6 4 L0 8 Z"; /* triangle */
+    -fx-scale-x: 0.5;
+    -fx-scale-y:0.5;
+    -fx-padding: 0 8 0 0;
+}
+
+/* hover */
+.sidebar-tree .tree-cell:filled:hover .tree-disclosure-node {
+    -fx-background-color: #1A1A1A;
+}
+
+/* xoay khi mở menu */
+.sidebar-tree .tree-item:expanded > .tree-cell .tree-disclosure-node {
+    -fx-rotate: 90;
+    -fx-background-color: #FFD700;
+}
+

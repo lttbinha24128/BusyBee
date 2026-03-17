@@ -3,7 +3,7 @@ package busybee.layout;
 import busybee.app.MainApp;
 import busybee.auth.Role;
 import busybee.auth.Session;
-import busybee.model.UserAccount;
+import busybee.auth.UserAccount;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

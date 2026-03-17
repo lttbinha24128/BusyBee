@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.request.controller.RequestReportController"
+      styleClass="promotion-page">
+
+    <!-- HEADER -->
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="promotion-toolbar">
+
+        <Label text="Request Reports" styleClass="promotion-title"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <ComboBox fx:id="cbTimeRange" prefWidth="160" promptText="Time Range"/>
+
+    </HBox>
+
+    <!-- SUMMARY -->
+    <HBox spacing="20">
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Total Requests" styleClass="text-subtitle"/>
+            <Label fx:id="lblTotal" text="0" styleClass="text-title"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Completed" styleClass="text-subtitle"/>
+            <Label fx:id="lblCompleted" text="0" styleClass="text-title"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Pending" styleClass="text-subtitle"/>
+            <Label fx:id="lblPending" text="0" styleClass="text-title"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Cancelled" styleClass="text-subtitle"/>
+            <Label fx:id="lblCancelled" text="0" styleClass="text-title"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- CHART -->
+    <VBox spacing="10" styleClass="chart-container">
+
+        <Label text="Requests by Month" styleClass="section-title"/>
+
+        <BarChart fx:id="requestChart" prefHeight="300">
+            <xAxis>
+                <CategoryAxis label="Month"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Requests"/>
+            </yAxis>
+        </BarChart>
+
+    </VBox>
+
+    <!-- TABLE -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+
+        <Label text="Recent Requests" styleClass="section-title"/>
+
+        <TableView fx:id="tableRequests" VBox.vgrow="ALWAYS">
+
+            <columns>
+                <TableColumn fx:id="colCustomer" text="Customer"/>
+                <TableColumn fx:id="colEmployee" text="Employee"/>
+                <TableColumn fx:id="colDate" text="Date"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
+            </columns>
+
+        </TableView>
+
+    </VBox>
+
+    <!-- INSIGHTS -->
+    <HBox spacing="20">
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Completion Rate" styleClass="text-subtitle"/>
+            <Label fx:id="lblCompletionRate" text="0%" styleClass="text-title"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Cancellation Rate" styleClass="text-subtitle"/>
+            <Label fx:id="lblCancelRate" text="0%" styleClass="text-title"/>
+        </VBox>
+
+    </HBox>
+
+</VBox>

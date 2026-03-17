@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.request.controller.RequestDetailController">
+
+    <stylesheets>
+        <URL value="@/busybee/style/busybee.css"/>
+        <URL value="@/busybee/style/request.css"/>
+    </stylesheets>
+
+    <!-- HEADER -->
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+
+            <Label text="Service Request Detail"
+                   style="-fx-font-size:16px; -fx-text-fill:#666;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Label fx:id="lblRequestId"
+                       style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+                <!-- STATUS BADGE -->
+
+                <Label fx:id="lblStatus"
+                       styleClass="request-status-pending"/>
+
+            </HBox>
+
+        </VBox>
+
+        <!-- ACTION BUTTON -->
+
+        <Button fx:id="btnActions"
+                text="Actions"/>
+
+    </HBox>
+
+    <!-- TAB PANE -->
+
+    <TabPane fx:id="tabPane"
+             tabClosingPolicy="UNAVAILABLE">
+
+        <!-- INFO TAB -->
+
+        <Tab text="Request Info">
+
+            <VBox spacing="20" style="-fx-padding:20;">
+
+                <GridPane hgap="20" vgap="15">
+
+                    <Label text="Request ID:" styleClass="text-body"/>
+                    <Label fx:id="lblRequestIdValue" styleClass="text-body" GridPane.columnIndex="1"/>
+
+                    <Label text="Customer:" styleClass="text-body" GridPane.rowIndex="1"/>
+                    <Label fx:id="lblCustomer" styleClass="text-body" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Booked By:" styleClass="text-body" GridPane.rowIndex="2"/>
+                    <Label fx:id="lblEmployee" styleClass="text-body" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Request Date:" styleClass="text-body" GridPane.rowIndex="3"/>
+                    <Label fx:id="lblRequestDate" styleClass="text-body" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Scheduled Start:" styleClass="text-body" GridPane.rowIndex="4"/>
+                    <Label fx:id="lblScheduledStart" styleClass="text-body" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Status:" styleClass="text-body" GridPane.rowIndex="5"/>
+                    <Label fx:id="lblStatusValue" styleClass="text-body" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                    <Label text="Notes:" styleClass="text-body" GridPane.rowIndex="6"/>
+                    <TextArea fx:id="txtNotes" editable="false" prefRowCount="3" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                </GridPane>
+
+            </VBox>
+
+        </Tab>
+
+        <!-- ITEMS TAB -->
+
+        <Tab text="Service Items">
+
+            <VBox spacing="15" style="-fx-padding:20;">
+
+                <TableView fx:id="itemsTable"
+                           VBox.vgrow="ALWAYS"
+                           styleClass="request-items-table">
+
+                    <columns>
+
+                        <TableColumn fx:id="colServiceName"
+                                     text="Service"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="colQuantity"
+                                     text="Quantity"
+                                     prefWidth="100"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+    </TabPane>
+
+</VBox>

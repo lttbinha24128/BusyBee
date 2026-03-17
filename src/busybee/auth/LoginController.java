@@ -1,12 +1,8 @@
 package busybee.auth;
 
 import busybee.app.MainApp;
-import busybee.model.UserAccount;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 
 public class LoginController {
 
@@ -25,47 +21,72 @@ public class LoginController {
     @FXML
     private Label lblError;
 
-    // Service xử lý đăng nhập
-    private AuthService authService = new AuthService();
+    private final AuthService authService = new AuthService();
 
     private boolean isPasswordVisible = false;
 
+    // =========================
+    // INIT
+    // =========================
     @FXML
     private void initialize() {
-        // Đồng bộ text giữa PasswordField và TextField
+
+        // bind 2 field password
         txtPasswordVisible.textProperty().bindBidirectional(txtPassword.textProperty());
 
-        // Ẩn TextField ban đầu
+        // ẩn field visible ban đầu
         txtPasswordVisible.setVisible(false);
         txtPasswordVisible.setManaged(false);
+
+        lblError.setText("");
     }
 
-    // Hàm toggle hiện/ẩn mật khẩu
+    // =========================
+    // TOGGLE PASSWORD
+    // =========================
     @FXML
     private void handleTogglePassword() {
+
         isPasswordVisible = !isPasswordVisible;
 
         if (isPasswordVisible) {
             txtPasswordVisible.setVisible(true);
             txtPasswordVisible.setManaged(true);
+
             txtPassword.setVisible(false);
             txtPassword.setManaged(false);
+
             btnTogglePassword.setText("🙈");
+
         } else {
             txtPassword.setVisible(true);
             txtPassword.setManaged(true);
+
             txtPasswordVisible.setVisible(false);
             txtPasswordVisible.setManaged(false);
+
             btnTogglePassword.setText("👁");
         }
     }
 
-    // Hàm được gọi khi người dùng bấm nút Login
+    // =========================
+    // LOGIN
+    // =========================
     @FXML
-    public void handleLogin() {
-        String username = txtUsername.getText();
-        String password = isPasswordVisible ? txtPasswordVisible.getText() : txtPassword.getText();
+    private void handleLogin() {
 
+        String username = txtUsername.getText().trim();
+        String password = isPasswordVisible
+                ? txtPasswordVisible.getText().trim()
+                : txtPassword.getText().trim();
+
+        // validate input
+        if (username.isEmpty() || password.isEmpty()) {
+            lblError.setText("Please enter username and password");
+            return;
+        }
+
+        // gọi service
         UserAccount user = authService.login(username, password);
 
         if (user == null) {
@@ -73,10 +94,13 @@ public class LoginController {
             return;
         }
 
-        // Lưu session
+        // 🔥 lưu session
         Session.setCurrentUser(user);
 
-        // Chuyển sang main layout
+        // debug (có thể xoá sau)
+        System.out.println("Login success - Role: " + user.getRole());
+
+        // chuyển màn hình chính
         MainApp.changeScene("/busybee/layout/main_layout.xml");
         MainApp.getPrimaryStage().setMaximized(true);
     }

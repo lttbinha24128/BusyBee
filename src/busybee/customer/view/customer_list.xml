@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.customer.controller.CustomerListController"
+      style="-fx-padding:20;">
+
+    <!-- TITLE -->
+    <Label text="👤 Customer Management"
+           styleClass="promotion-title"/>
+
+    <!-- TOOLBAR -->
+    <HBox spacing="10"
+          alignment="CENTER_LEFT"
+          styleClass="promotion-toolbar">
+
+        <!-- SEARCH -->
+        <TextField fx:id="txtSearch"
+                   promptText="Search customer..."
+                   prefWidth="250"/>
+
+        <!-- STATUS FILTER -->
+        <ComboBox fx:id="cbStatus"
+                  promptText="Status"
+                  prefWidth="140"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- CREATE -->
+        <Button fx:id="btnCreate"
+                text="➕ Create Customer"
+                styleClass="btn-create"/>
+
+    </HBox>
+
+    <!-- TABLE -->
+    <TableView fx:id="customerTable"
+               VBox.vgrow="ALWAYS">
+
+        <columns>
+
+            <TableColumn fx:id="colName"
+                         text="Name"
+                         prefWidth="200"/>
+
+            <TableColumn fx:id="colPhone"
+                         text="Phone"
+                         prefWidth="150"/>
+
+            <TableColumn fx:id="colEmail"
+                         text="Email"
+                         prefWidth="200"/>
+
+            <TableColumn fx:id="colAddress"
+                         text="Address"
+                         prefWidth="250"/>
+
+            <TableColumn fx:id="colStatus"
+                         text="Status"
+                         prefWidth="120"/>
+
+            <TableColumn fx:id="colAction"
+                         text="Action"
+                         prefWidth="230"/>
+
+        </columns>
+
+    </TableView>
+
+</VBox>
+

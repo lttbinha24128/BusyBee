@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.billing.controller.BillingReportController"
+      styleClass="promotion-page">
+
+    <!-- HEADER -->
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="promotion-toolbar">
+
+        <Label text="Billing Reports" styleClass="promotion-title"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <ComboBox fx:id="cbTimeRange" prefWidth="160"/>
+
+    </HBox>
+
+    <!-- SUMMARY -->
+    <HBox spacing="20">
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Total Revenue"/>
+            <Label fx:id="lblTotalRevenue" text="0"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Total Payments"/>
+            <Label fx:id="lblTotalPayments" text="0"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Paid"/>
+            <Label fx:id="lblPaid" text="0"/>
+        </VBox>
+
+        <VBox styleClass="card" alignment="CENTER" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Pending"/>
+            <Label fx:id="lblPending" text="0"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- CHART -->
+    <VBox spacing="10">
+
+        <Label text="Revenue Overview"/>
+
+        <BarChart fx:id="billingChart" prefHeight="300">
+            <xAxis>
+                <CategoryAxis label="Type"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Amount"/>
+            </yAxis>
+        </BarChart>
+
+    </VBox>
+
+    <!-- TABLE -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+
+        <Label text="Payments"/>
+
+        <TableView fx:id="tablePayments" VBox.vgrow="ALWAYS">
+
+            <columns>
+                <TableColumn fx:id="colRequest" text="Request"/>
+                <TableColumn fx:id="colAmount" text="Amount"/>
+                <TableColumn fx:id="colMethod" text="Method"/>
+                <TableColumn fx:id="colDate" text="Date"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
+            </columns>
+
+        </TableView>
+
+    </VBox>
+
+</VBox>

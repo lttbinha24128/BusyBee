@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.request.controller.RequestCreateController"
+      style="-fx-padding:20;">
+
+    <!-- TITLE -->
+    <Label fx:id="lblTitle"
+           text="➕ Create Service Request"
+           style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+    <!-- FORM -->
+    <GridPane hgap="15" vgap="15">
+
+        <Label text="Customer"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"/>
+
+        <ComboBox fx:id="cbCustomer"
+                  promptText="Select Customer"
+                  GridPane.rowIndex="0"
+                  GridPane.columnIndex="1"/>
+
+        <Label text="Booked By (Employee)"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"/>
+
+        <ComboBox fx:id="cbEmployee"
+                  promptText="Select Employee"
+                  GridPane.rowIndex="1"
+                  GridPane.columnIndex="1"/>
+
+        <Label text="Request Date"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="0"/>
+
+        <DatePicker fx:id="dpRequestDate"
+                    GridPane.rowIndex="2"
+                    GridPane.columnIndex="1"/>
+
+        <Label text="Scheduled Start"
+               GridPane.rowIndex="3"
+               GridPane.columnIndex="0"/>
+
+        <DatePicker fx:id="dpScheduledStart"
+                    GridPane.rowIndex="3"
+                    GridPane.columnIndex="1"/>
+
+        <Label text="Status"
+               GridPane.rowIndex="4"
+               GridPane.columnIndex="0"/>
+
+        <ComboBox fx:id="cbStatus"
+                  GridPane.rowIndex="4"
+                  GridPane.columnIndex="1"/>
+
+        <Label text="Notes"
+               GridPane.rowIndex="5"
+               GridPane.columnIndex="0"/>
+
+        <TextArea fx:id="txtNotes"
+                  prefRowCount="3"
+                  GridPane.rowIndex="5"
+                  GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <!-- SERVICE ITEMS -->
+    <VBox spacing="10">
+
+        <Label text="Service Items"
+               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <HBox spacing="10">
+
+            <ComboBox fx:id="cbService"
+                      promptText="Select Service"
+                      prefWidth="200"/>
+
+            <TextField fx:id="txtQuantity"
+                       promptText="Quantity"
+                       prefWidth="100"/>
+
+            <Button fx:id="btnAddItem"
+                    text="➕ Add Item"/>
+
+        </HBox>
+
+        <TableView fx:id="itemsTable"
+                   prefHeight="150"
+                   styleClass="request-items-table">
+
+            <columns>
+
+                <TableColumn fx:id="colServiceName"
+                             text="Service"
+                             prefWidth="200"/>
+
+                <TableColumn fx:id="colQuantity"
+                             text="Quantity"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="colItemAction"
+                             text="Action"
+                             prefWidth="100"/>
+
+            </columns>
+
+        </TableView>
+
+    </VBox>
+
+    <!-- BUTTONS -->
+    <HBox spacing="10">
+
+        <Button fx:id="btnSave"
+                text="💾 Save Request"/>
+
+        <Button fx:id="btnCancel"
+                text="Cancel"/>
+
+    </HBox>
+
+</VBox>

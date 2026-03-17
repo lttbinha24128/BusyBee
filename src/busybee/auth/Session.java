@@ -1,39 +1,41 @@
 package busybee.auth;
 
-import busybee.model.UserAccount;
-
-//Session dùng để lưu thông tin người dùng đang đăng nhập
- 
-
 public class Session {
 
-    // User hiện tại (static → toàn app dùng chung)
     private static UserAccount currentUser;
 
-    /**
-     * Gán user khi login thành công
-     */
+    // =========================
+    // SET / GET USER
+    // =========================
     public static void setCurrentUser(UserAccount user) {
         currentUser = user;
     }
 
-    /**
-     * Lấy user hiện tại
-     */
     public static UserAccount getCurrentUser() {
         return currentUser;
     }
 
-    /**
-     * Kiểm tra đã login chưa
-     */
+    // =========================
+    // ROLE
+    // =========================
+    public static Role getRole() {
+        return currentUser != null ? currentUser.getRole() : null;
+    }
+
+    public static boolean hasRole(Role role) {
+        return currentUser != null && currentUser.getRole() == role;
+    }
+
+    // =========================
+    // LOGIN STATE
+    // =========================
     public static boolean isLoggedIn() {
         return currentUser != null;
     }
 
-    /**
-     * Xóa session khi logout
-     */
+    // =========================
+    // LOGOUT
+    // =========================
     public static void clear() {
         currentUser = null;
     }

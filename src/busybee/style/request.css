@@ -1,0 +1,256 @@
+/* =====================================
+   BUSYBEE REQUEST MODULE
+   Professional Service Request Management
+===================================== */
+
+/* ========= PAGE TITLE ========= */
+
+.request-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #2c2c2c;
+}
+
+/* ========= TOOLBAR ========= */
+
+.request-toolbar {
+    -fx-padding: 16 20;
+    -fx-spacing: 10;
+    -fx-background-color: white;
+    -fx-border-color: #e5e5e5;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ========= SEARCH FIELD ========= */
+
+.request-search {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6 12;
+}
+
+.request-search:focused {
+    -fx-border-color: #FFD54F;
+}
+
+/* ========= STATUS FILTER ========= */
+
+.request-filter {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+/* ========= TABLE ========= */
+
+.request-table {
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+/* table header */
+
+.request-table .column-header-background {
+    -fx-background-color: #fff8e1;
+}
+
+.request-table .column-header {
+    -fx-font-weight: 700;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* table cell */
+
+.request-table .table-cell {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* hover row */
+
+.request-table .table-row-cell:hover {
+    -fx-background-color: #fff8e1;
+    -fx-cursor: hand;
+}
+
+/* selected row */
+
+.request-table .table-row-cell:selected {
+    -fx-background-color: #ffe082;
+}
+
+/* ========= ACTION BUTTONS ========= */
+
+.request-action-edit {
+    -fx-background-color: #FFD54F;
+    -fx-text-fill: #3b2a00;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+}
+
+.request-action-edit:hover {
+    -fx-background-color: #FFCA28;
+}
+
+.request-action-cancel {
+    -fx-background-color: #ef5350;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+}
+
+.request-action-cancel:hover {
+    -fx-background-color: #e53935;
+}
+
+.request-action-complete {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+}
+
+.request-action-complete:hover {
+    -fx-background-color: #45a049;
+}
+
+/* ========= STATUS BADGES ========= */
+
+.request-status-pending {
+    -fx-background-color: #fff3cd;
+    -fx-text-fill: #856404;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.request-status-confirmed {
+    -fx-background-color: #d1ecf1;
+    -fx-text-fill: #0c5460;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.request-status-in-progress {
+    -fx-background-color: #d4edda;
+    -fx-text-fill: #155724;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.request-status-completed {
+    -fx-background-color: #c3e6cb;
+    -fx-text-fill: #155724;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.request-status-cancelled {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #721c24;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+/* ========= REQUEST DETAIL CARD ========= */
+
+.request-detail-card {
+    -fx-background-color: white;
+    -fx-padding: 22;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,3);
+}
+
+/* ========= ITEMS TABLE ========= */
+
+.request-items-table {
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.request-items-table .column-header-background {
+    -fx-background-color: #f5f5f5;
+}
+
+.request-items-table .column-header {
+    -fx-font-weight: 700;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.request-items-table .table-cell {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.request-items-table .table-row-cell:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+/* ========= TABPANE ========= */
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 10 0 5 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 6 6 0 0;
+    -fx-padding: 6 18;
+    -fx-font-weight: 600;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: #FFE082;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #FFD54F;
+}
+
+.tab-pane .tab:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* ========= PAGE ========= */
+
+.request-page {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 20;
+}
+
+/* ========= CHART CONTAINER ========= */
+
+.chart-container {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,3);
+}

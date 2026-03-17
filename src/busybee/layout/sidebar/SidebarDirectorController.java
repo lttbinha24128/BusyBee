@@ -37,12 +37,36 @@ public class SidebarDirectorController {
         hr.getChildren().add(new TreeItem<>("Benefits"));
         root.getChildren().add(hr);
 
-        // Helper Management
+        // Collaborator Management
         TreeItem<String> helper = new TreeItem<>("🤝 Collaborator Management");
         helper.getChildren().add(new TreeItem<>("Profile"));
         helper.getChildren().add(new TreeItem<>("Schedule"));
         helper.getChildren().add(new TreeItem<>("Assignment"));
         root.getChildren().add(helper);
+
+        // =========================
+        // CUSTOMER MANAGEMENT
+        // =========================
+        TreeItem<String> customer = new TreeItem<>("👤 Customer Management");
+        customer.getChildren().add(new TreeItem<>("Customer List"));
+        customer.getChildren().add(new TreeItem<>("Customer Reports"));
+        root.getChildren().add(customer);
+
+        // =========================
+        // SERVICE REQUESTS
+        // =========================
+        TreeItem<String> requests = new TreeItem<>("📋 Service Requests");
+        requests.getChildren().add(new TreeItem<>("Request List"));
+        requests.getChildren().add(new TreeItem<>("Request Reports"));
+        root.getChildren().add(requests);
+
+        // =========================
+        // BILLING
+        // =========================
+        TreeItem<String> billing = new TreeItem<>("💳 Billing");
+        billing.getChildren().add(new TreeItem<>("Billing List"));
+        billing.getChildren().add(new TreeItem<>("Billing Reports"));
+        root.getChildren().add(billing);
 
         // Inventory
         TreeItem<String> inventory = new TreeItem<>("📦 Inventory");
@@ -50,12 +74,11 @@ public class SidebarDirectorController {
 
         // Reports
         TreeItem<String> reports = new TreeItem<>("💰 Reports");
-        reports.getChildren().add(new TreeItem<>("Billing"));
         reports.getChildren().add(new TreeItem<>("Salary"));
         reports.getChildren().add(new TreeItem<>("Feedback"));
         root.getChildren().add(reports);
 
-        // Promotion (CHỈ SỬA PHẦN NÀY)
+        // Promotion
         TreeItem<String> promotion = new TreeItem<>("🎉 Promotion");
         promotion.getChildren().add(new TreeItem<>("All Promotions"));
         promotion.getChildren().add(new TreeItem<>("Promotion Reports"));
@@ -72,7 +95,9 @@ public class SidebarDirectorController {
 
         });
 
-        //XỬ LÝ NAVIGATION
+        // =========================
+        // NAVIGATION
+        // =========================
         sidebarTree.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
 
             if (newVal == null) {
@@ -110,11 +135,35 @@ public class SidebarDirectorController {
                 case "Assignment" ->
                     MainLayoutController.getInstance().showContent("ASSIGNMENT VIEW HERE");
 
+                // CUSTOMER
+                case "Customer List" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/customer/view/customer_list.xml");
+
+                case "Customer Reports" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/customer/view/customer_report.xml");
+
+                // REQUEST
+                case "Request List" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/request/view/request_list.xml");
+
+                case "Request Reports" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/request/view/request_report.xml");
+
+                // BILLING
+                case "Billing List" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/billing/view/billing_list.xml");
+
+                case "Billing Reports" ->
+                    MainLayoutController.getInstance()
+                            .loadContent("/busybee/billing/view/billing_report.xml");
+
                 case "📦 Inventory" ->
                     MainLayoutController.getInstance().showContent("INVENTORY VIEW HERE");
-
-                case "Billing" ->
-                    MainLayoutController.getInstance().showContent("BILLING VIEW HERE");
 
                 case "Salary" ->
                     MainLayoutController.getInstance().showContent("SALARY VIEW HERE");
@@ -122,15 +171,14 @@ public class SidebarDirectorController {
                 case "Feedback" ->
                     MainLayoutController.getInstance().showContent("REPORTS & FEEDBACK VIEW HERE");
 
-                // PROMOTION NAVIGATION
+                // PROMOTION
                 case "All Promotions" ->
                     MainLayoutController.getInstance()
-                            .loadContent("/busybee/promotion/promotion_list.xml");
+                            .loadContent("/busybee/promotion/view/promotion_list.xml");
 
                 case "Promotion Reports" ->
                     MainLayoutController.getInstance()
-                            .loadContent("/busybee/promotion/promotion_reports.xml");
-
+                            .loadContent("/busybee/promotion/view/promotion_reports.xml");
             }
 
         });

@@ -1,469 +1,282 @@
 /* =====================================
-BUSYBEE PROMOTION MODULE
-Clean Admin Dashboard Style
+   BUSYBEE PROMOTION MODULE
 ===================================== */
 
-/* =========================
-PAGE TITLE
-========================= */
+/* TITLE */
 
 .promotion-title {
-
-
--fx-font-size: 24px;
--fx-font-weight: bold;
--fx-text-fill: #2c3e50;
-
-
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3b2a00;
 }
-
-/* =========================
-SECTION TITLE
-========================= */
 
 .section-title {
-
--fx-font-size: 16px;
--fx-font-weight: bold;
--fx-text-fill: #2c3e50;
-
-
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
 }
 
-/* =========================
-TOOLBAR
-========================= */
+/* TOOLBAR */
 
 .promotion-toolbar {
-
-
--fx-padding: 15 0 15 0;
--fx-spacing: 10;
-
-
+    -fx-padding: 15 20;
+    -fx-spacing: 10;
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 0 0 1 0;
 }
 
-/* =========================
-SEARCH FIELD
-========================= */
-
-.promotion-toolbar .text-field {
-
-
--fx-background-color: white;
--fx-background-radius: 8;
--fx-border-radius: 8;
--fx-border-color: #e0e0e0;
--fx-padding: 7 12;
-
-}
-
-.promotion-toolbar .text-field:focused {
-
-
--fx-border-color: #ffb300;
--fx-effect: dropshadow(gaussian, rgba(255,179,0,0.25), 6,0,0,0);
-
-
-}
-
-/* =========================
-COMBOBOX FILTER
-========================= */
-
-.promotion-toolbar .combo-box {
-
-
--fx-background-color: white;
--fx-background-radius: 8;
--fx-border-radius: 8;
--fx-border-color: #e0e0e0;
-
-
-}
-
-.promotion-toolbar .combo-box:focused {
-
--fx-border-color: #ffb300;
-
-
-}
-
-/* =========================
-CREATE BUTTON
-========================= */
+/* BUTTON */
 
 .btn-create {
-
-
--fx-background-color: linear-gradient(#ffd54f,#ffb300);
--fx-text-fill: black;
--fx-font-weight: bold;
--fx-background-radius: 8;
--fx-padding: 8 18;
-
-
+    -fx-background-color: linear-gradient(#FFD54F,#FFB300);
+    -fx-text-fill: #3b2a00;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
 }
 
 .btn-create:hover {
-
-
--fx-background-color: linear-gradient(#ffca28,#ffa000);
-
-
+    -fx-background-color: linear-gradient(#FFCA28,#FF8F00);
+    -fx-effect: dropshadow(gaussian, rgba(255,213,79,0.3), 4,0,0,2);
 }
 
-.btn-create:pressed {
-
-
--fx-background-color: #ff8f00;
-
-
+.btn-export {
+    -fx-background-color: #b87918;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
 }
 
-/* =========================
-TABLE
-========================= */
+.btn-export:hover {
+    -fx-background-color: #a06815;
+    -fx-effect: dropshadow(gaussian, rgba(184,121,24,0.3), 4,0,0,2);
+}
+
+/* SUMMARY CARD */
+
+.report-card {
+    -fx-background-color: white;
+    -fx-padding: 18 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #b87918;
+    -fx-border-width: 2;
+}
+
+.report-number {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #b87918;
+}
+
+/* CHART */
+
+.promotion-chart {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+}
+
+.default-color0.chart-bar { -fx-bar-fill: linear-gradient(#FFD54F,#FFB300); }
+.default-color1.chart-bar { -fx-bar-fill: #FFC107; }
+.default-color2.chart-bar { -fx-bar-fill: #FFCA28; }
+
+.chart-bar { -fx-background-radius: 6 6 0 0; }
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines { -fx-stroke: #eeeeee; }
+
+.axis { -fx-tick-label-fill: #6c757d; }
+
+.axis-label { -fx-text-fill: #6c757d; }
+
+/* TABLE */
 
 .promotion-table {
-
-
--fx-background-color: white;
--fx-border-color: #e6e6e6;
--fx-border-radius: 10;
--fx-background-radius: 10;
-
-
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
 }
 
-/* Table header */
-
 .promotion-table .column-header-background {
-
-
--fx-background-color: #f4f6f8;
--fx-background-radius: 10 10 0 0;
-
-
+    -fx-background-color: #fff8e1;
 }
 
 .promotion-table .column-header {
-
-
--fx-font-weight: bold;
--fx-font-size: 13px;
-
+    -fx-font-weight: 700;
+    -fx-alignment: CENTER_LEFT;
 }
 
-/* Table rows */
-
-.promotion-table .table-row-cell {
-
-
--fx-border-color: transparent transparent #f0f0f0 transparent;
-
-
+.promotion-table .table-cell {
+    -fx-alignment: CENTER_LEFT;
 }
-
-/* Hover */
 
 .promotion-table .table-row-cell:hover {
-
-
--fx-background-color: #fafafa;
-
+    -fx-background-color: #fff8e1;
+    -fx-cursor: hand;
 }
-
-/* Selected */
 
 .promotion-table .table-row-cell:selected {
-
-
--fx-background-color: #fff3cd;
-
-
+    -fx-background-color: #ffe082;
 }
 
-.promotion-table:focused .table-row-cell:selected {
-
-
--fx-background-color: #fff3cd;
-
+.report-table {
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
 }
 
-/* =========================
-STATUS BADGES
-========================= */
+.report-table .table-row-cell:hover { -fx-background-color: #fff8e1; }
+
+.report-table .table-row-cell:selected { -fx-background-color: #ffe082; }
+
+/* ACTION BUTTONS */
+
+.promotion-action-edit {
+    -fx-background-color: #FFD54F;
+    -fx-text-fill: #3b2a00;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+    -fx-cursor: hand;
+}
+
+.promotion-action-edit:hover {
+    -fx-background-color: #FFD700;
+}
+
+.promotion-action-disable {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333333;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+    -fx-cursor: hand;
+}
+
+.promotion-action-disable:hover {
+    -fx-background-color: #FFD700;
+}
+
+/* STATUS BADGES */
+
+.status-badge {
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
 
 .status-active {
-
-
--fx-background-color: #d4edda;
--fx-text-fill: #155724;
--fx-padding: 4 12;
--fx-background-radius: 20;
--fx-font-weight: bold;
-
-
+    -fx-background-color: #e6f4ea;
+    -fx-text-fill: #1e7e34;
 }
 
 .status-expired {
-
-
--fx-background-color: #f8d7da;
--fx-text-fill: #721c24;
--fx-padding: 4 12;
--fx-background-radius: 20;
--fx-font-weight: bold;
-
-
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #721c24;
 }
 
 .status-inactive {
-
--fx-background-color: #e2e3e5;
--fx-text-fill: #383d41;
--fx-padding: 4 12;
--fx-background-radius: 20;
--fx-font-weight: bold;
-
+    -fx-background-color: #e2e3e5;
+    -fx-text-fill: #383d41;
 }
 
-/* =========================
-ACTION BUTTONS
-========================= */
+/* PROMOTION STATUS (for detail) */
 
-.btn-edit {
-
-
--fx-background-color: #4CAF50;
--fx-text-fill: white;
--fx-background-radius: 6;
--fx-padding: 4 12;
-
-
+.promotion-status-active {
+    -fx-background-color: #e8f5e9;
+    -fx-text-fill: #2e7d32;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
 }
 
-.btn-edit:hover {
-
-
--fx-background-color: #43a047;
-
-
+.promotion-status-expired {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #721c24;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
 }
 
-.btn-disable {
-
-
--fx-background-color: #f44336;
--fx-text-fill: white;
--fx-background-radius: 6;
--fx-padding: 4 12;
-
-
+.promotion-status-inactive {
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: #616161;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
 }
 
-.btn-disable:hover {
+/* CARD (for detail) */
 
-
--fx-background-color: #d32f2f;
-
-
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 3,0,0,1);
 }
 
-/* =====================================
-PROMOTION REPORT DASHBOARD
-===================================== */
+/* PAGE */
 
-/* =========================
-SUMMARY CARDS
-========================= */
-
-.report-card {
-
-
--fx-background-color: white;
--fx-padding: 18;
--fx-spacing: 6;
--fx-background-radius: 12;
--fx-border-radius: 12;
--fx-border-color: #e6e6e6;
--fx-cursor: hand;
-
-
+.promotion-page {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 20;
 }
 
-.report-card:hover {
+/* CHART CONTAINER */
 
-
--fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10,0,0,2);
-
-
+.chart-container {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,3);
 }
 
-/* Number in card */
+/* TABPANE */
 
-.report-number {
-
-
--fx-font-size: 24px;
--fx-font-weight: bold;
--fx-text-fill: #ffb300;
-
-
+.tab-pane {
+    -fx-background-color: transparent;
 }
 
-/* =========================
-CHART CONTAINER
-========================= */
-
-.promotion-chart {
-
-
--fx-background-color: white;
--fx-padding: 18;
--fx-background-radius: 12;
--fx-border-radius: 12;
--fx-border-color: #e6e6e6;
-
-
+.tab-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
-/* =========================
-   BAR CHART COLOR
-   ========================= */
-
-.chart-bar {
-
-    -fx-bar-fill: linear-gradient(#FFD54F, #FFB300);
-
+.tab-pane .tab-header-area {
+    -fx-padding: 10 0 5 0;
 }
 
-/* nếu có nhiều series */
-
-.default-color0.chart-bar {
-
-    -fx-bar-fill: linear-gradient(#FFD54F, #FFB300);
-
+.tab-pane .tab {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 6 6 0 0;
+    -fx-padding: 6 18;
+    -fx-font-weight: 600;
 }
 
-.default-color1.chart-bar {
-
-    -fx-bar-fill: #FFC107;
-
+.tab-pane .tab:hover {
+    -fx-background-color: #FFE082;
 }
 
-.default-color2.chart-bar {
-
-    -fx-bar-fill: #FFCA28;
-
+.tab-pane .tab:selected {
+    -fx-background-color: #FFD54F;
 }
 
-/* Bar style */
-
-.chart-bar {
-
-
--fx-background-radius: 6 6 0 0;
-
-
-}
-
-/* Grid lines */
-
-.chart-vertical-grid-lines {
-
-
--fx-stroke: #eeeeee;
-
-
-}
-
-.chart-horizontal-grid-lines {
-
-
--fx-stroke: #eeeeee;
-
-
-}
-
-/* Axis */
-
-.axis {
-
-
--fx-tick-label-fill: #6c757d;
-
-
-}
-
-.axis-label {
-
-
--fx-text-fill: #6c757d;
-
-
-}
-
-/* Legend */
-
-.chart-legend {
-
-
--fx-background-color: transparent;
-
-
-}
-
-.chart-legend-item {
-
-
--fx-text-fill: #6c757d;
-
-
-}
-
-/* =========================
-REPORT TABLE
-========================= */
-
-.report-table {
-
-
--fx-background-color: white;
--fx-border-color: #e6e6e6;
--fx-background-radius: 10;
--fx-border-radius: 10;
-
-
-}
-
-.report-table .column-header-background {
-
-
--fx-background-color: #f4f6f8;
-
-
-}
-
-.report-table .table-row-cell:hover {
-
-
--fx-background-color: #fafafa;
-
-
-}
-
-.report-table .table-row-cell:selected {
-
-
--fx-background-color: #fff3cd;
-}
-
-.report-table:focused .table-row-cell:selected {
-
-
--fx-background-color: #fff3cd;
-
-
+.tab-pane .tab:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }

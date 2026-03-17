@@ -1,0 +1,229 @@
+/* =====================================
+   BUSYBEE BILLING MODULE
+   Professional Payment & Invoice Management
+===================================== */
+
+/* ========= PAGE TITLE ========= */
+
+.billing-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #2c2c2c;
+}
+
+/* ========= TOOLBAR ========= */
+
+.billing-toolbar {
+    -fx-padding: 16 20;
+    -fx-spacing: 10;
+    -fx-background-color: white;
+    -fx-border-color: #e5e5e5;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ========= SEARCH FIELD ========= */
+
+.billing-search {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6 12;
+}
+
+.billing-search:focused {
+    -fx-border-color: #FFD54F;
+}
+
+/* ========= STATUS FILTER ========= */
+
+.billing-filter {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+/* ========= TABLE ========= */
+
+.billing-table {
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+/* table header */
+
+.billing-table .column-header-background {
+    -fx-background-color: #fff8e1;
+}
+
+.billing-table .column-header {
+    -fx-font-weight: 700;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* table cell */
+
+.billing-table .table-cell {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* hover row */
+
+.billing-table .table-row-cell:hover {
+    -fx-background-color: #fff8e1;
+    -fx-cursor: hand;
+}
+
+/* selected row */
+
+.billing-table .table-row-cell:selected {
+    -fx-background-color: #ffe082;
+}
+
+/* ========= ACTION BUTTONS ========= */
+
+.billing-action-view {
+    -fx-background-color: #FFD54F;
+    -fx-text-fill: #3b2a00;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+}
+
+.billing-action-view:hover {
+    -fx-background-color: #FFCA28;
+}
+
+.billing-action-edit {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+}
+
+.billing-action-edit:hover {
+    -fx-background-color: #45a049;
+}
+
+.billing-action-delete {
+    -fx-background-color: #ef5350;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12;
+}
+
+.billing-action-delete:hover {
+    -fx-background-color: #e53935;
+}
+
+/* ========= STATUS BADGES ========= */
+
+.billing-status-paid {
+    -fx-background-color: #e8f5e9;
+    -fx-text-fill: #2e7d32;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.billing-status-pending {
+    -fx-background-color: #fff3cd;
+    -fx-text-fill: #856404;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.billing-status-overdue {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #721c24;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.billing-status-issued {
+    -fx-background-color: #d1ecf1;
+    -fx-text-fill: #0c5460;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+.billing-status-cancelled {
+    -fx-background-color: #e2e3e5;
+    -fx-text-fill: #383d41;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+}
+
+/* ========= BILLING DETAIL CARD ========= */
+
+.billing-detail-card {
+    -fx-background-color: white;
+    -fx-padding: 22;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,3);
+}
+
+/* ========= TABPANE ========= */
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 10 0 5 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 6 6 0 0;
+    -fx-padding: 6 18;
+    -fx-font-weight: 600;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: #FFE082;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #FFD54F;
+}
+
+.tab-pane .tab:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* ========= PAGE ========= */
+
+.billing-page {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 20;
+}
+
+/* ========= CHART CONTAINER ========= */
+
+.chart-container {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10,0,0,3);
+}

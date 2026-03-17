@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.customer.controller.CustomerCreateController"
+      style="-fx-padding:20;">
+
+    <!-- TITLE -->
+    <Label text="➕ Create Customer"
+           style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+    <!-- FORM -->
+    <GridPane hgap="15" vgap="15">
+
+        <Label text="Full Name"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtName"
+                   GridPane.rowIndex="0"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Phone"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtPhone"
+                   GridPane.rowIndex="1"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Email"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtEmail"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Address"
+               GridPane.rowIndex="3"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtAddress"
+                   GridPane.rowIndex="3"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Status"
+               GridPane.rowIndex="4"
+               GridPane.columnIndex="0"/>
+
+        <ComboBox fx:id="cbStatus"
+                  GridPane.rowIndex="4"
+                  GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <!-- BUTTON -->
+    <HBox spacing="10">
+
+        <Button fx:id="btnSave"
+                text="💾 Save Customer"/>
+
+        <Button fx:id="btnCancel"
+                text="Cancel"/>
+
+    </HBox>
+
+</VBox>

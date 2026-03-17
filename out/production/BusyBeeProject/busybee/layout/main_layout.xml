@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:controller="busybee.layout.MainLayoutController"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <!-- TOP HEADER -->
+    <top>
+    <HBox spacing="10" styleClass="top-header" style="-fx-padding:10;">
+        <!-- LEFT: Logo + tên công ty -->
+        <Label text="🐝BusyBee" styleClass="logo-placeholder"/>
+
+        <!-- Spacer để đẩy search bar ra giữa -->
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- CENTER: Search bar -->
+        <TextField fx:id="txtSearch" promptText="Search..."
+                   styleClass="search-bar" maxWidth="300"/>
+
+        <!-- Spacer để đẩy profile sang phải -->
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- RIGHT: Notification + Profile -->
+        <Button fx:id="btnNotification" text="🔔" styleClass="btn-icon"/>
+        <HBox spacing="8" alignment="CENTER_RIGHT">
+            <VBox alignment="CENTER_RIGHT">
+                <Label fx:id="lblName" text="Tên nhân viên" styleClass="profile-name"/>
+                <Label fx:id="lblRole" text="Director" styleClass="profile-role"/>
+            </VBox>
+            <ImageView fx:id="imgAvatar" fitHeight="32" fitWidth="32"
+                       styleClass="profile-avatar"/>
+            <Button fx:id="btnLogout" text="Logout" styleClass="btn-icon" onAction="#handleLogout"/>
+        </HBox>
+        
+    </HBox>
+</top>
+
+
+    <!-- SIDEBAR CONTAINER -->
+    <left>
+       <VBox fx:id="sidebarContainer" VBox.vgrow="ALWAYS"/>
+    </left>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <StackPane fx:id="mainContent"/>
+    </center>
+
+</BorderPane>

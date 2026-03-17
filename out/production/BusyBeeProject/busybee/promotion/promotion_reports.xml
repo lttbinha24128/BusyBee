@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.promotion.PromotionReportController"
+      styleClass="promotion-page"
+      prefWidth="Infinity">
+
+    <!-- ================= HEADER ================= -->
+
+    <HBox spacing="10"
+          alignment="CENTER_LEFT"
+          styleClass="promotion-toolbar">
+
+        <Label text="Promotion Reports"
+               styleClass="promotion-title"/>
+
+        <!-- Spacer -->
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- Right tools -->
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+
+            <ComboBox fx:id="cbTimeRange"
+                      prefWidth="160"
+                      promptText="Time Range"/>
+
+            <Button fx:id="btnExport"
+                    text="Export Report"
+                    styleClass="btn-export"/>
+
+        </HBox>
+
+    </HBox>
+
+
+    
+
+    <!-- ================= SUMMARY CARDS ================= -->
+   <HBox spacing="20" alignment="CENTER" prefWidth="Infinity">
+
+    <!-- Card 1 -->
+    <VBox styleClass="card"
+          spacing="8"
+          alignment="CENTER"
+          HBox.hgrow="ALWAYS"
+          maxWidth="Infinity">
+
+        <Label text="Total Promo Usage" styleClass="text-subtitle"/>
+        <Label fx:id="lblUsage" styleClass="text-title"/>
+        <Label text="Redemptions across all active codes" styleClass="text-muted"/>
+        <Label text="+12.5%" styleClass="text-success"/>
+
+    </VBox>
+
+
+    <!-- Card 2 -->
+    <VBox styleClass="card"
+          spacing="8"
+          alignment="CENTER"
+          HBox.hgrow="ALWAYS"
+          maxWidth="Infinity">
+
+        <Label text="Revenue via Promo" styleClass="text-subtitle"/>
+        <Label fx:id="lblRevenue" styleClass="text-title"/>
+        <Label text="Total sales where promo was applied" styleClass="text-muted"/>
+        <Label text="+8.2%" styleClass="text-success"/>
+
+    </VBox>
+
+
+    <!-- Card 3 -->
+    <VBox styleClass="card"
+          spacing="8"
+          alignment="CENTER"
+          HBox.hgrow="ALWAYS"
+          maxWidth="Infinity">
+
+        <Label text="Total Discount Amount" styleClass="text-subtitle"/>
+        <Label fx:id="lblDiscount" styleClass="text-title"/>
+        <Label text="Amount saved by customers" styleClass="text-muted"/>
+        <Label text="+2.1%" styleClass="text-success"/>
+
+    </VBox>
+
+</HBox>
+
+
+
+    <!-- ================= CHART ================= -->
+
+    <VBox spacing="10"
+          styleClass="chart-container">
+
+        <Label text="Promotion Usage"
+               styleClass="section-title"/>
+
+        <BarChart fx:id="usageChart"
+                  legendVisible="false"
+                  prefHeight="320"
+                  categoryGap="30"
+                  barGap="5">
+
+            <xAxis>
+                <CategoryAxis label="Promotion"/>
+            </xAxis>
+
+            <yAxis>
+                <NumberAxis label="Usage Count"/>
+            </yAxis>
+
+        </BarChart>
+
+    </VBox>
+
+
+    <!-- ================= TABLE ================= -->
+
+    <VBox spacing="10"
+          VBox.vgrow="ALWAYS">
+
+        <Label text="Top Performing Promotions"
+               styleClass="section-title"/>
+
+        <TableView fx:id="topPromoTable"
+                   styleClass="report-table"
+                   VBox.vgrow="ALWAYS">
+
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+
+            <columns>
+
+                <TableColumn fx:id="colPromo"
+                             text="Promotion"
+                             prefWidth="200"/>
+
+                <TableColumn fx:id="colUsage"
+                             text="Usage"
+                             prefWidth="120"/>
+
+                <TableColumn fx:id="colRevenue"
+                             text="Revenue"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="colStatus"
+                             text="Status"
+                             prefWidth="120"/>
+
+            </columns>
+
+        </TableView>
+
+    </VBox>
+
+</VBox>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.customer.controller.CustomerDetailController">
+
+    <stylesheets>
+        <URL value="@/busybee/style/busybee.css"/>
+        <URL value="@/busybee/style/customer.css"/>
+    </stylesheets>
+    <!-- HEADER -->
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+
+            <Label text="Customer Detail"
+                   style="-fx-font-size:16px; -fx-text-fill:#666;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Label fx:id="lblNameHeader"
+                       style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+                <!-- STATUS BADGE -->
+
+                <Label fx:id="lblStatus"
+                       styleClass="status-badge"/>
+
+            </HBox>
+
+        </VBox>
+
+        <!-- ACTION BUTTON -->
+
+        <Button fx:id="btnActions"
+                text="Actions"/>
+
+    </HBox>
+
+
+    <!-- TAB PANE -->
+
+    <TabPane fx:id="tabPane"
+             tabClosingPolicy="UNAVAILABLE">
+
+        <!-- INFO TAB -->
+
+        <Tab text="Info">
+
+            <VBox spacing="20"
+                  style="-fx-padding:20 0 0 0;">
+
+                <!-- CUSTOMER INFO CARD -->
+
+                <VBox spacing="15"
+                      styleClass="card">
+
+                    <Label text="Customer Information"
+                           style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                    <GridPane hgap="30"
+                              vgap="14">
+
+                        <Label text="Full Name:"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblName"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Phone:"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblPhone"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Email:"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblEmail"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Address:"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblAddress"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="1"/>
+
+                    </GridPane>
+
+                </VBox>
+
+            </VBox>
+
+        </Tab>
+
+
+        <!-- REQUEST TAB -->
+
+        <Tab text="Requests">
+
+            <VBox spacing="12"
+                  style="-fx-padding:10 0 0 0;">
+
+                <Label text="Service Requests"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                <TableView fx:id="requestTable"
+                           VBox.vgrow="ALWAYS">
+
+                    <columns>
+
+                        <TableColumn fx:id="colService"
+                                     text="Service"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="colDate"
+                                     text="Date"
+                                     prefWidth="180"/>
+
+                        <TableColumn fx:id="colRequestStatus"
+                                     text="Status"
+                                     prefWidth="150"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+
+        <!-- BILLING TAB -->
+
+        <Tab text="Billing">
+
+            <VBox spacing="12"
+                  style="-fx-padding:10 0 0 0;">
+
+                <Label text="Billing History"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                <TableView fx:id="billingTable"
+                           VBox.vgrow="ALWAYS">
+
+                    <columns>
+
+                        <TableColumn fx:id="colInvoice"
+                                     text="Invoice"
+                                     prefWidth="200"/>
+
+                        <TableColumn fx:id="colBillingDate"
+                                     text="Date"
+                                     prefWidth="180"/>
+
+                        <TableColumn fx:id="colAmount"
+                                     text="Amount"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="colBillingStatus"
+                                     text="Status"
+                                     prefWidth="150"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+
+        <!-- CHILDREN TAB -->
+
+        <Tab text="Children">
+
+            <VBox spacing="12"
+                  style="-fx-padding:10 0 0 0;">
+
+                <Label text="Children Information"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                <TableView fx:id="childrenTable"
+                           VBox.vgrow="ALWAYS">
+
+                    <columns>
+
+                        <TableColumn fx:id="colChildName"
+                                     text="Name"
+                                     prefWidth="200"/>
+
+                        <TableColumn fx:id="colChildAge"
+                                     text="Age"
+                                     prefWidth="120"/>
+
+                        <TableColumn fx:id="colChildNote"
+                                     text="Note"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="colChildAction"
+                                     text="Action"
+                                     prefWidth="180"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+    </TabPane>
+
+</VBox>

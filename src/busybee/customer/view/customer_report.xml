@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.customer.controller.CustomerReportsController"
+      styleClass="promotion-page"
+      prefWidth="Infinity">
+
+    <!-- HEADER -->
+
+    <HBox spacing="10"
+          alignment="CENTER_LEFT"
+          styleClass="promotion-toolbar">
+
+        <Label text="Customer Reports"
+               styleClass="promotion-title"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <HBox spacing="10">
+
+            <ComboBox fx:id="cbTimeRange"
+                      prefWidth="160"
+                      promptText="Time Range"/>
+
+            <Button fx:id="btnExport"
+                    text="Export Report"
+                    styleClass="btn-export"/>
+
+        </HBox>
+
+    </HBox>
+
+
+    <!-- SUMMARY CARDS -->
+
+    <HBox spacing="20"
+          alignment="CENTER"
+          prefWidth="Infinity">
+
+        <VBox styleClass="card"
+              alignment="CENTER"
+              spacing="8"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Total Customers"
+                   styleClass="text-subtitle"/>
+
+            <Label fx:id="lblTotalCustomers"
+                   text="0"
+                   styleClass="text-title"/>
+
+            <Label text="All registered users"
+                   styleClass="text-muted"/>
+
+        </VBox>
+
+
+        <VBox styleClass="card"
+              alignment="CENTER"
+              spacing="8"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Active Customers"
+                   styleClass="text-subtitle"/>
+
+            <Label fx:id="lblActiveCustomers"
+                   text="0"
+                   styleClass="text-title"/>
+
+            <Label text="Currently using services"
+                   styleClass="text-muted"/>
+
+        </VBox>
+
+
+        <VBox styleClass="card"
+              alignment="CENTER"
+              spacing="8"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Inactive Customers"
+                   styleClass="text-subtitle"/>
+
+            <Label fx:id="lblInactiveCustomers"
+                   text="0"
+                   styleClass="text-title"/>
+
+            <Label text="No recent activity"
+                   styleClass="text-muted"/>
+
+        </VBox>
+
+
+        <VBox styleClass="card"
+              alignment="CENTER"
+              spacing="8"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="New This Month"
+                   styleClass="text-subtitle"/>
+
+            <Label fx:id="lblNewCustomers"
+                   text="0"
+                   styleClass="text-title"/>
+
+            <Label text="New registrations"
+                   styleClass="text-muted"/>
+
+        </VBox>
+
+    </HBox>
+
+
+    <!-- CUSTOMER GROWTH CHART -->
+
+    <VBox spacing="10"
+          styleClass="chart-container">
+
+        <Label text="Customer Growth"
+               styleClass="section-title"/>
+
+        <BarChart fx:id="customerChart"
+                  legendVisible="false"
+                  prefHeight="320">
+
+            <xAxis>
+                <CategoryAxis label="Month"/>
+            </xAxis>
+
+            <yAxis>
+                <NumberAxis label="Customers"/>
+            </yAxis>
+
+        </BarChart>
+
+    </VBox>
+
+
+    <!-- TOP CUSTOMERS -->
+
+    <VBox spacing="10"
+          VBox.vgrow="ALWAYS">
+
+        <Label text="Top Customers"
+               styleClass="section-title"/>
+
+        <TableView fx:id="customerTable"
+                   VBox.vgrow="ALWAYS">
+
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+
+            <columns>
+
+                <TableColumn fx:id="colName"
+                             text="Customer"
+                             prefWidth="200"/>
+
+                <TableColumn fx:id="colPhone"
+                             text="Phone"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="colEmail"
+                             text="Email"
+                             prefWidth="250"/>
+
+                <TableColumn fx:id="colStatus"
+                             text="Status"
+                             prefWidth="120"/>
+
+            </columns>
+
+        </TableView>
+
+    </VBox>
+
+
+    <!-- CUSTOMER INSIGHTS -->
+
+    <VBox spacing="10">
+
+        <Label text="Customer Insights"
+               styleClass="section-title"/>
+
+        <HBox spacing="20">
+
+            <VBox styleClass="card"
+                  alignment="CENTER"
+                  spacing="8"
+                  HBox.hgrow="ALWAYS">
+
+                <Label text="Growth Rate"
+                       styleClass="text-subtitle"/>
+
+                <Label fx:id="lblGrowthRate"
+                       text="0%"
+                       styleClass="text-title"/>
+
+                <Label text="Customer increase vs last month"
+                       styleClass="text-muted"/>
+
+            </VBox>
+
+
+            <VBox styleClass="card"
+                  alignment="CENTER"
+                  spacing="8"
+                  HBox.hgrow="ALWAYS">
+
+                <Label text="Retention Rate"
+                       styleClass="text-subtitle"/>
+
+                <Label fx:id="lblRetentionRate"
+                       text="0%"
+                       styleClass="text-title"/>
+
+                <Label text="Customers returning to services"
+                       styleClass="text-muted"/>
+
+            </VBox>
+
+        </HBox>
+
+    </VBox>
+
+</VBox>

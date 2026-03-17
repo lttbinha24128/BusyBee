@@ -1,0 +1,97 @@
+/* ===== LOGIN CONTAINER ===== */
+.login-container {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 32;
+    -fx-spacing: 16;
+    -fx-alignment: CENTER;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10,0,0,5);
+}
+
+.login-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1A1A1A;
+}
+
+.login-form {
+    -fx-spacing: 12;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* ===== USERNAME & PASSWORD FIELDS ===== */
+.text-field, .password-field {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #D0D0D0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1A1A1A;
+    -fx-border-width: 1;
+}
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #FFD700;
+    -fx-border-width: 2;
+    -fx-background-color: #FFFFFF;
+}
+
+/* ===== PASSWORD CONTAINER ===== */
+.password-container {
+    -fx-alignment: CENTER;
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #D0D0D0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 0;
+    -fx-border-width: 1;
+}
+.password-container:focused-within {
+    -fx-border-color: #FFD700;
+    -fx-border-width: 2;
+    -fx-background-color: #FFFFFF;
+}
+
+/* ===== TOGGLE PASSWORD BUTTON ===== */
+.btn-toggle-password {
+    -fx-background-color: transparent;
+    -fx-text-fill: #666666;
+    -fx-cursor: hand;
+    -fx-padding: 0 8;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+.btn-toggle-password:hover {
+    -fx-text-fill: #1A1A1A;
+}
+.btn-toggle-password:pressed {
+    -fx-text-fill: #FFD600;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.btn-login {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #1A1A1A;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+.btn-login:hover {
+    -fx-background-color: #FFC700;
+    -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.3), 4,0,0,2);
+}
+.btn-login:pressed {
+    -fx-background-color: #FFB700;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.login-error {
+    -fx-text-fill: #F44336;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}

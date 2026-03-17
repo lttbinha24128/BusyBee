@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.request.controller.RequestListController"
+      style="-fx-padding:20;">
+
+    <!-- TITLE -->
+    <Label text="📋 Service Request Management"
+           styleClass="request-title"/>
+
+    <!-- TOOLBAR -->
+    <HBox spacing="10"
+          alignment="CENTER_LEFT"
+          styleClass="request-toolbar">
+
+        <!-- SEARCH -->
+        <TextField fx:id="txtSearch"
+                   promptText="Search request..."
+                   prefWidth="250"
+                   styleClass="request-search"/>
+
+        <!-- STATUS FILTER -->
+        <ComboBox fx:id="cbStatus"
+                  promptText="Status"
+                  prefWidth="140"
+                  styleClass="request-filter"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- CREATE -->
+        <Button fx:id="btnCreate"
+                text="➕ Create Request"
+                styleClass="btn-create"/>
+
+    </HBox>
+
+    <!-- TABLE -->
+    <TableView fx:id="requestTable"
+               VBox.vgrow="ALWAYS"
+               styleClass="request-table">
+
+        <columns>
+
+            <TableColumn fx:id="colRequestId"
+                         text="Request ID"
+                         prefWidth="100"/>
+
+            <TableColumn fx:id="colCustomerName"
+                         text="Customer"
+                         prefWidth="200"/>
+
+            <TableColumn fx:id="colEmployeeName"
+                         text="Booked By"
+                         prefWidth="150"/>
+
+            <TableColumn fx:id="colRequestDate"
+                         text="Request Date"
+                         prefWidth="150"/>
+
+            <TableColumn fx:id="colScheduledStart"
+                         text="Scheduled Start"
+                         prefWidth="150"/>
+
+            <TableColumn fx:id="colStatus"
+                         text="Status"
+                         prefWidth="120"/>
+
+            <TableColumn fx:id="colAction"
+                         text="Action"
+                         prefWidth="200"/>
+
+        </columns>
+
+    </TableView>
+
+</VBox>

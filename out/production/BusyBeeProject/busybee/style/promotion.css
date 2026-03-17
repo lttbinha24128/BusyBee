@@ -1,0 +1,142 @@
+/* =====================================
+   BUSYBEE PROMOTION MODULE
+   BusyBee Honey Theme
+===================================== */
+
+/* ========== COMMON ========== */
+.promotion-title {
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3b2a00; /* nâu đậm */
+}
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ========== TOOLBAR ========== */
+.promotion-toolbar {
+    -fx-padding: 15 20;
+    -fx-spacing: 10;
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 0 0 1 0; /* border dưới */
+}
+.promotion-toolbar .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+.promotion-toolbar .combo-box:focused {
+    -fx-border-color: #FFB300;
+}
+
+/* ========== BUTTONS ========== */
+.btn-create {
+    -fx-background-color: linear-gradient(#FFD54F,#FFB300);
+    -fx-text-fill: #3b2a00;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+}
+.btn-create:hover {
+    -fx-background-color: linear-gradient(#FFCA28,#FFA000);
+}
+.btn-export {
+    -fx-background-color: #b87918; /* vàng nâu */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+}
+.btn-export:hover {
+    -fx-background-color: #d1a74f; /* vàng nâu nhạt hơn */
+}
+
+/* ========== SUMMARY CARDS ========== */
+.report-card {
+    -fx-background-color: white;
+    -fx-padding: 18 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+
+    /* Khung viền rõ ràng */
+    -fx-border-color: #b87918;
+    -fx-border-width: 2;
+
+    /* Shadow nổi bật */
+    -fx-effect: dropshadow(gaussian, rgba(184,121,24,0.35), 12,0,0,4);
+}
+.report-card:hover {
+    -fx-border-color: #d1a74f;
+    -fx-effect: dropshadow(gaussian, rgba(209,167,79,0.45), 14,0,0,5);
+}
+.report-number {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #b87918;
+}
+.text-subtitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3b2a00;
+}
+.text-muted {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c757d;
+}
+.text-success {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e7e34;
+}
+
+/* ========== CHART ========== */
+.promotion-chart {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e6e6e6;
+}
+.default-color0.chart-bar { -fx-bar-fill: linear-gradient(#FFD54F,#FFB300); }
+.default-color1.chart-bar { -fx-bar-fill: #FFC107; }
+.default-color2.chart-bar { -fx-bar-fill: #FFCA28; }
+.chart-bar { -fx-background-radius: 6 6 0 0; }
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines { -fx-stroke: #eeeeee; }
+.axis { -fx-tick-label-fill: #6c757d; }
+.axis-label { -fx-text-fill: #6c757d; }
+
+/* ========== REPORT TABLE ========== */
+.report-table {
+    -fx-background-color: white;
+    -fx-border-color: #e6e6e6;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.report-table .table-row-cell:hover { -fx-background-color: #fff8e1; }
+.report-table .table-row-cell:selected { -fx-background-color: #ffe082; }
+
+/* ========== STATUS BADGES ========== */
+.status-active {
+    -fx-background-color: #e6f4ea;
+    -fx-text-fill: #1e7e34;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+}
+.status-expired {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #721c24;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+}
+.status-inactive {
+    -fx-background-color: #e2e3e5;
+    -fx-text-fill: #383d41;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+}

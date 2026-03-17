@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="busybee.layout.sidebar.SidebarReceptionController"
+       xmlns:fx="http://javafx.com/fxml"
+      styleClass="sidebar"
+      spacing="8"
+      VBox.vgrow="ALWAYS">
+
+    <TreeView fx:id="sidebarTree" prefWidth="220" VBox.vgrow="ALWAYS"/>
+</VBox>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="busybee.promotion.controller.PromotionDetailController">
+
+    <stylesheets>
+        <URL value="@/busybee/style/busybee.css"/>
+        <URL value="@/busybee/style/promotion.css"/>
+    </stylesheets>
+
+    <!-- HEADER -->
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+
+            <Label text="Promotion Detail"
+                   style="-fx-font-size:16px; -fx-text-fill:#666;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Label fx:id="lblNameHeader"
+                       style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+                <!-- STATUS BADGE -->
+
+                <Label fx:id="lblStatus"
+                       styleClass="status-badge"/>
+
+            </HBox>
+
+        </VBox>
+
+        <!-- ACTION BUTTON -->
+
+        <Button fx:id="btnActions"
+                text="Actions"/>
+
+    </HBox>
+
+
+    <!-- TAB PANE -->
+
+    <TabPane fx:id="tabPane"
+             tabClosingPolicy="UNAVAILABLE">
+
+        <!-- INFO TAB -->
+
+        <Tab text="Info">
+
+            <VBox spacing="20"
+                  style="-fx-padding:20 0 0 0;">
+
+                <!-- PROMOTION INFO CARD -->
+
+                <VBox spacing="15"
+                      styleClass="card">
+
+                    <Label text="Promotion Information"
+                           style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                    <GridPane hgap="30"
+                              vgap="14">
+
+                        <Label text="Name:"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblName"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Service:"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblService"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Discount Type:"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblDiscountType"
+                               GridPane.rowIndex="2"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Discount Value:"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblDiscountValue"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="Start Date:"
+                               GridPane.rowIndex="4"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblStartDate"
+                               GridPane.rowIndex="4"
+                               GridPane.columnIndex="1"/>
+
+
+                        <Label text="End Date:"
+                               GridPane.rowIndex="5"
+                               GridPane.columnIndex="0"/>
+
+                        <Label fx:id="lblEndDate"
+                               GridPane.rowIndex="5"
+                               GridPane.columnIndex="1"/>
+
+                    </GridPane>
+
+                </VBox>
+
+            </VBox>
+
+        </Tab>
+
+
+        <!-- USAGE TAB -->
+
+        <Tab text="Usage History">
+
+            <VBox spacing="12"
+                  style="-fx-padding:10 0 0 0;">
+
+                <Label text="Promotion Usage"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                <TableView fx:id="usageTable"
+                           VBox.vgrow="ALWAYS">
+
+                    <columns>
+
+                        <TableColumn fx:id="colUsageDate"
+                                     text="Date"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="colCustomer"
+                                     text="Customer"
+                                     prefWidth="200"/>
+
+                        <TableColumn fx:id="colDiscountApplied"
+                                     text="Discount Applied"
+                                     prefWidth="200"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+    </TabPane>
+
+</VBox>
